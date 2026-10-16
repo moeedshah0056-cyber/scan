@@ -1,0 +1,8 @@
+node_modules/
+.system_generated/
+*.log
+pages_cache/
+homepage.html
+products_dump.json
+extracted_images.json
+pages_summary.json

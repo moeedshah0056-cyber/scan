@@ -1,0 +1,230 @@
+{
+  "about": [
+    "Boost Your Business in One Scan.",
+    "0\n\t\t\t\n\t\t\t\n\t\t\t\t/\n\t\t\t\tRs.0.00\n\t\t\t\n      \n    \n\t\t.t4s-h-cart__design3 .t4s-count-box {\n\t\t    width: 19px;\n\t\t    height: 19px;\n\t\t    line-height: 19px;\n\t\t    position: static;\n\t\t    display: inline-block;\n\t\t}\n\t\t.t4s-h-cart__design2 .t4s-site-nav__icon:last-child,\n\t\t.t4s-h-cart__design3 .t4s-site-nav__icon:last-child,\n\t\t.t4s-h-cart__design4 .t4s-site-nav__icon:last-child,\n\t\t.t4s-h-cart__design5 .t4s-site-nav__icon:last-child {\n\t\t    padding-right: 0;\n\t\t}\n    @media (min-width: 768px) {\n\n\t    \t.t4s-h-cart__design2 .t4s-site-nav__cart a,\n\t    \t.t4s-h-cart__design4 .t4s-site-nav__cart a,\n\t    \t.t4s-h-cart__design5 .t4s-site-nav__cart a {\n\t\t      display: flex;\n\t\t\t   align-items: center;\n\t\t\t   justify-content: center;\n\t    \t}\n\t    \t.t4s-h-cart__design2 .t4s-h-cart-totals,\n\t    \t.t4s-h-cart__design4 .t4s-h-cart-totals {\n\t\t\t    display: block;\n\t\t\t    margin-left: 15px;\n\t\t\t}\n\t\t\t.t4s-h-cart__design4 .t4s-site-nav__cart .t4s-count-box,\n\t\t\t.t4s-h-cart__design5 .t4s-site-nav__cart .t4s-count-box {\n\t\t\t\tdisplay: none\n\t\t\t}\n\t\t\t.t4s-h-cart__design4 .t4s-h-cart-totals {\n\t\t\t\tmargin-left: 7px;\n\t\t\t}\n\t\t\t.t4s-h-cart__design5 .t4s-h-cart__divider {\n\t\t\t    display: inline-block;\n\t\t\t}\n\t\t\t.t4s-h-cart__design5 .t4s-h-cart-totals {\n\t\t\t    display: block;\n\t\t\t    margin-left: 7px;\n\t\t\t}\n\t\t\t\n\t\t\t.t4s-h-cart__design1 .t4s-site-nav__icon.t4s-site-nav__btnMenu {\n\t\t\t    padding-right: 0;\n\t\t\t}\n    }\n    \n  \n\n        \r\n\rTapScan is a Pakistan-based online business operating from Lahore, specializing in custom QR code stands, NFC-enabled QR solutions, and complete digital engagement tools for businesses of all sizes. Our mission is to empower restaurants, cafés, retail stores, salons, clinics, hotels, and other service-based businesses to seamlessly connect with their customers, streamline operations, and grow their digital presence with ease.",
+    "We provide a wide range of professionally designed products, including Google review QR stands, social media access QR codes, WhatsApp chat QR codes, digital menu QR stands for restaurants and cafés, and payment QR solutions such as JazzCash, Easypaisa, and bank QR codes. Each product is fully customizable with your brand logo, colors, and design preferences, ensuring a polished and professional appearance. Our QR stands and NFC solutions are built to enhance customer engagement, encourage authentic reviews, simplify cashless transactions, and make your business operations more efficient.",
+    "At TapScan, we combine innovation, quality, and reliability. All orders are carefully processed and produced based on your specifications, then delivered nationwide through trusted courier services. We are committed to transparency, providing clear information about shipping, customization options, and after-sales support. Our dedicated team is always available to assist with inquiries, ensuring every customer receives a smooth and satisfying experience.",
+    "We believe that every business, regardless of size, deserves access to simple yet powerful digital tools. TapScan’s solutions are designed to bridge the gap between offline interactions and online engagement, allowing businesses to transform customer experiences in seconds. Whether you want more reviews, more social media followers, or easier cashless payments, TapScan makes it possible with just one scan.",
+    "Our vision is to make digital transformation accessible for all Pakistani businesses. By leveraging QR code and NFC technology, we aim to create smarter, faster, and more connected business environments across the country. We help businesses not only improve customer engagement but also increase operational efficiency, customer satisfaction, and long-term growth.",
+    "Address: B3 Second floor, 28 Band Road,",
+    "Email: [email&#160;protected]Phone: +92 327 7008585",
+    "TapScan is a Pakistan-based online business operating from Lahore, specializing in NFC and QR code standees for businesses, restaurants, and service providers. We help customers enable Google reviews, social media access, and digital payments through smart QR solutions with nationwide delivery across Pakistan.",
+    "Business information & Contact: \n\nAddress: B3 Second floor, 28 Band Road,",
+    "Email: [email&#160;protected]Phone: +92 327 7008585",
+    "Quick Links\r\n                      \r\n                      Quick Links\r\n                      \r\n                            \r\n                                    \r\n                                    About Us\r\n                                    \r\n                                \r\n                                    \r\n                                    Contact us\r\n                                    \r\n                                \r\n                                    \r\n                                    Privacy Policy\r\n                                    \r\n                                \r\n                                    \r\n                                    Refund Policy\r\n                                    \r\n                                \r\n                                    \r\n                                    Shipping Policy\r\n                                    \r\n                                \r\n                                    \r\n                                    Terms of Service\r\n                                    \r\n                                \r\n                                    \r\n                                    Blog\r\n                                    \r\n                                \r\n                                    \r\n                                    FAQs\r\n                                    \r\n                                \r\n                                    \r\n                                    How it works\r\n                                    \r\n                                \r\n                            \r\n                \r\n            \r\n                \r\n                      \r\n                      \r\n                          Newsletter\r\n                      \r\n                      Newsletter\r\n                      \rSign-up our Newsletter now to be the first one to receive updates about deals, discounts & offers!"
+  ],
+  "faqs": [
+    {
+      "question": "1. What is a QR stand?",
+      "answer": "A QR stand is a tabletop or counter display with a printed QR code that allows customers to instantly open your Google review page, social media, website, or payment link by scanning with their phone."
+    },
+    {
+      "question": "2. What types of QR stands does TAPSCAN offer?",
+      "answer": "TAPSCAN provides:"
+    },
+    {
+      "question": "3. Can I customize my QR stand?",
+      "answer": "Yes. Every TAPSCAN product is fully customized with your:"
+    },
+    {
+      "question": "4. Where can I use a QR code tabletop?",
+      "answer": "You can use it at:"
+    },
+    {
+      "question": "5. How does Google review QR stand work?",
+      "answer": "Customers scan your Google review QR standee, which directly opens your Google Business review page where they can rate and leave feedback instantly."
+    },
+    {
+      "question": "6. Will this help increase my Google reviews?",
+      "answer": "Yes. A visible QR code sign at your counter reminds happy customers to leave reviews, increasing:"
+    },
+    {
+      "question": "7. Do I need technical skills?",
+      "answer": "No. TAPSCAN sets everything for you. You only share your Google review link."
+    },
+    {
+      "question": "8. What is a payment QR stand?",
+      "answer": "A payment QR stand displays your JazzCash, Easypaisa, or bank QR so customers can pay by scanning instead of cash."
+    },
+    {
+      "question": "9. Can I add multiple payment methods on one QR stand?",
+      "answer": "Yes. TAPSCAN can design:"
+    },
+    {
+      "question": "10. Is it secure?",
+      "answer": "Yes. We only display your official payment QR provided by JazzCash/Easypaisa/bank—no data is stored by TAPSCAN."
+    },
+    {
+      "question": "11. What is a QR code menu?",
+      "answer": "A QR code menu stand lets customers view your digital menu on their phone instead of using printed menus."
+    },
+    {
+      "question": "13. Is QR menu better than printed menu?",
+      "answer": "Yes because it:"
+    },
+    {
+      "question": "15. What is NFC QR stand?",
+      "answer": "An NFC QR stand allows customers to TAP their phone instead of scanning. It opens your link instantly."
+    },
+    {
+      "question": "16. Do all phones support NFC?",
+      "answer": "Most modern Android and iPhones support NFC. The QR code works as backup for all devices."
+    },
+    {
+      "question": "17. Is NFC better than QR?",
+      "answer": "NFC is faster and premium, while QR works on 100% phones—TAPSCAN provides both."
+    },
+    {
+      "question": "20. Do you deliver all over Pakistan?",
+      "answer": "Yes. TAPSCAN delivers to:Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad and all cities of Pakistan."
+    },
+    {
+      "question": "21. What material do you use?",
+      "answer": "We offer:"
+    },
+    {
+      "question": "22. Can I reorder later?",
+      "answer": "Yes. We keep your design saved for quick reorders."
+    },
+    {
+      "question": "23. Does QR code expire?",
+      "answer": "No. TAPSCAN QR codes do not expire."
+    },
+    {
+      "question": "24. Can one QR stand have multiple links?",
+      "answer": "Yes using smart multi-link QR or NFC page."
+    },
+    {
+      "question": "25. Will it work without internet?",
+      "answer": "Scanning needs internet on customer phone, but NFC/QR itself always works."
+    },
+    {
+      "question": "26. Do you help set Google review link?",
+      "answer": "Yes. TAPSCAN guides you step by step."
+    },
+    {
+      "question": "27. What if my link changes?",
+      "answer": "We can update and reprint your QR code sign anytime."
+    },
+    {
+      "question": "28. Is bulk order available?",
+      "answer": "Yes for restaurants chains, franchises and brands."
+    },
+    {
+      "question": "Business & Contact Information",
+      "answer": "Address: B3 Second floor, 28 Band Road,"
+    }
+  ],
+  "policies": {
+    "privacy": [
+      "Last updated: January 2026",
+      "TapScan.pk is a Pakistan-based online store operating through https://www.tapscan.pk/ . This Privacy Policy explains how we collect, use, store, and protect your personal information when you visit our website, communicate with us, or purchase products from our store. By accessing or using our website, you agree to the terms described in this Privacy Policy.",
+      "Information We Collect",
+      "When you visit TapScan.pk, place an order, or contact us, we may collect personal information such as your name, phone number, email address, billing address, shipping address, and order details. When you make a purchase, payment-related information is collected and processed securely through trusted third-party payment service providers; TapScan.pk does not store your full card or banking details. We may also automatically collect certain technical information such as your IP address, browser type, device information, and browsing behavior to help us improve our website and services.",
+      "How We Use Your Information",
+      "We use your personal information to process and deliver your orders, confirm payments, arrange shipping, and provide customer support. Your information also helps us communicate with you regarding order updates, inquiries, or important service-related notices. Additionally, we may use limited data to improve our website functionality, enhance user experience, prevent fraudulent activities, and comply with applicable laws and regulations in Pakistan.",
+      "Sharing and Disclosure of Information",
+      "Cookies and Tracking Technologies",
+      "Our website uses cookies and similar technologies to ensure proper website functionality, remember user preferences, and analyze website traffic. Cookies help us improve your browsing experience. You may choose to disable cookies through your browser settings; however, some features of the website may not function properly as a result.",
+      "We take reasonable administrative, technical, and physical measures to protect your personal information against unauthorized access, misuse, loss, or disclosure. While we strive to use commercially acceptable means to protect your data, no method of transmission over the internet or electronic storage is completely secure, and therefore absolute security cannot be guaranteed.",
+      "Your Rights and Choices",
+      "You have the right to request access to the personal information we hold about you, request correction of inaccurate data, or ask for deletion of your personal information, subject to legal and operational requirements. You may also opt out of receiving promotional communications from us at any time. Requests related to your personal data can be made by contacting us using the details provided below.",
+      "TapScan.pk does not knowingly collect personal information from children under the age of 18. If you believe that a minor has provided us with personal information, please contact us so we can take appropriate action.",
+      "Changes to This Privacy Policy",
+      "We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or business operations. Any updates will be posted on this page with a revised “Last updated” date.",
+      "Business & Contact Information",
+      "Address: B3 Second floor, 28 Band Road,",
+      "Lahore 54000, Pakistan",
+      "Email: [email&#160;protected]Phone: +92 327 7008585",
+      "Business Name: Tap Scan PK"
+    ],
+    "refund": [
+      "Last Updated: January 2026",
+      "At TapScan.pk, customer satisfaction is important to us. We are committed to providing high-quality NFC and QR code standees designed to meet your business needs. Please read our Returns & Refunds Policy carefully before placing an order.",
+      "🔁 Return Eligibility (30-Day Return Window)",
+      "We offer a 30-day return window from the date of delivery under the following conditions:",
+      "You may request a return or replacement if:",
+      "The product arrives damaged",
+      "The product is defective",
+      "The product received is incorrect or does not match your order",
+      "Due to the customized nature of our products, returns are not accepted for reasons such as change of mind, incorrect information submitted by the customer, or design details approved at checkout, unless the issue is caused by TapScan.pk.",
+      "🛠 Customized Products Policy",
+      "All TapScan.pk products are custom-made based on customer-provided information, including but not limited to:",
+      "Payment or contact details",
+      "Customers are responsible for reviewing and confirming all submitted details before placing an order.TapScan.pk is not liable for errors caused by incorrect or incomplete information provided during checkout.",
+      "📦 Damaged, Defective, or Incorrect Items",
+      "If your order arrives damaged, defective, or incorrect:",
+      "Contact us within 48 hours of delivery",
+      "Provide clear photos or video evidence of the issue",
+      "Once verified, we will offer:",
+      "A free replacement, or",
+      "A refund, where applicable",
+      "💳 Refund Processing (Within 5 Days)",
+      "Approved refunds are processed within 5 business days",
+      "Refunds are issued to the original payment method",
+      "Bank or payment provider processing times may vary",
+      "Please note:Refunds are not guaranteed for customized products unless the fault is confirmed to be on our side.",
+      "❌ Order Cancellations",
+      "Orders may be cancelled within 6 hours of purchase, only if production has not started",
+      "Once production begins, cancellations or refunds are no longer possible",
+      "If the return is approved due to our error, TapScan.pk will cover return shipping",
+      "Unauthorized returns sent without approval may not be accepted",
+      "For any return, refund, or order-related concerns, please contact our support team:",
+      "Email: [email&#160;protected]Phone: +92 327 7008585",
+      "We aim to respond to all inquiries within 24–48 business hours.",
+      "For any questions regarding refunds, replacements, or order-related concerns, customers may contact our support team using the details below. We aim to respond to all inquiries within 24–48 business hours.",
+      "Business & Contact Information",
+      "Address: B3 Second floor, 28 Band Road,",
+      "Lahore 54000, Pakistan",
+      "Email: [email&#160;protected]Phone: +92 327 7008585",
+      "Business Name: Tap Scan PK"
+    ],
+    "shipping": [
+      "At TapScan, we strive to ensure that your custom QR code standees and products are delivered safely and on time across Pakistan.",
+      "1. Order Processing Time",
+      "Custom orders require 1–2 business days for processing and production after we receive your confirmed design and order details.",
+      "You will receive an order confirmation once your order is placed and a shipping confirmation once your order is dispatched.",
+      "Order Cut-off time: 2:00PM Pakistan Standard Time",
+      "2. Shipping Methods & Delivery Time",
+      "Handling (processing time):   1-2 Days",
+      "Transit Time:  2-3 Days",
+      "We offer standard and express shipping options within Pakistan.",
+      "Standard Delivery:  3–5 business days",
+      "Delivery times may vary due to courier delays, public holidays, weather conditions, or regional restrictions.",
+      "Shipping charges are calculated at checkout based on your delivery address and selected shipping method.",
+      "Free shipping may be offered during promotional campaigns or on selected bulk orders, as displayed on our website.",
+      "4. Cash on Delivery (COD)",
+      "Cash on Delivery is available for eligible locations within Pakistan.",
+      "Once your order is shipped, tracking details may be shared via SMS or email, allowing you to monitor your shipment through the courier service.",
+      "6. Incorrect Address or Delivery Issues",
+      "Customers are responsible for providing accurate and complete shipping information.TapScan is not responsible for delivery delays or failures caused by incorrect or incomplete addresses.In case of reshipment due to address issues, additional charges may apply.",
+      "Business & Contact Information",
+      "Address: B3 Second floor, 28 Band Road,",
+      "Lahore 54000, Pakistan",
+      "Email: [email&#160;protected]Phone: +92 327 7008585",
+      "Business Name: Tap Scan PK"
+    ],
+    "terms": [
+      "This website is operated by TapScan, a Pakistan-based business operating from Lahore, Pakistan. Throughout the site, the terms “we”, “us”, and “our” refer to TapScan.",
+      "By accessing or using our website (https://www.tapscan.pk), you agree to be bound by these Terms of Service, including all applicable policies such as our Privacy Policy, Shipping Policy, and Refund Policy.",
+      "You agree to use this website for lawful purposes only and not engage in any activity that violates applicable laws or regulations of Pakistan.",
+      "2. Products & Services",
+      "TapScan provides custom QR code standees and related products. Product descriptions, images, and prices are displayed as accurately as possible; however, minor variations may occur.",
+      "By placing an order, you agree to provide accurate and complete information.TapScan reserves the right to cancel or refuse any order due to incorrect details, unavailability, or suspected misuse.",
+      "All prices listed on the website are in Pakistani Rupees (PKR) and are subject to change without prior notice.",
+      "5. Shipping & Returns",
+      "Shipping, delivery timelines, and return conditions are governed by our Shipping Policy and Refund Policy available on our website.",
+      "6. Intellectual Property",
+      "All content on this website, including text, images, logos, and designs, is the property of TapScan and may not be copied or used without written permission.",
+      "7. Limitation of Liability",
+      "TapScan shall not be liable for any indirect or consequential damages arising from the use of our website or products, to the maximum extent permitted by law.",
+      "These Terms of Service are governed by and interpreted in accordance with the laws of Pakistan.",
+      "TapScan reserves the right to update these Terms at any time. Continued use of the website constitutes acceptance of any changes.",
+      "Business & Contact Information",
+      "Address: B3 Second floor, 28 Band Road,",
+      "Lahore 54000, Pakistan",
+      "Email: [email&#160;protected]Phone: +92 327 7008585",
+      "Business Name: Tap Scan PK"
+    ]
+  }
+}

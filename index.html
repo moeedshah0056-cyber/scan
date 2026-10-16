@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakistan's Smart QR Code Stand: Get Reviews, Social Follows & Payment – TapScan.pk</title>
+  <meta name="description" content="Boost your business with Tapscan.pk — Pakistan’s #1 NFC and QR code stand solution for instant Google reviews, quick social media follows, and seamless scan-to-pay payments. Ideal for cafés, salons, clinics, and local businesses." />
+  
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="TapScan.pk" />
+  <meta property="og:title" content="Pakistan's Smart QR Code Stand: Get Reviews, Social Follows & Payment" />
+  <meta property="og:description" content="Pakistan’s #1 NFC and QR code stand solution for instant Google reviews, social media follows, and seamless scan-to-pay payments." />
+  <meta property="og:image" content="https://www.tapscan.pk/cdn/shop/files/insta_post_of_customer_reviews.jpg?v=1762556863" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#171717" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://www.tapscan.pk/cdn/shop/files/1_2398bb3c-d186-48fe-8350-26fe8d03b111.png?v=1762540365&width=32" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <div class="announcement-text">
+        <span class="announcement-badge">NEW</span>
+        <span>🚀 Boost Your Business in One Scan — Instant Google Reviews &amp; Social Follows!</span>
+      </div>
+      <div class="announcement-contact">
+        <a href="tel:+923277008585">📞 0327 7008585</a>
+        <span>•</span>
+        <span>📍 Lahore, Pakistan</span>
+        <span>•</span>
+        <span>🚚 Nationwide COD Delivery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Header & Nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <a href="#home" class="brand-logo" title="TapScan.pk Home">
+          <img src="https://www.tapscan.pk/cdn/shop/files/1_2398bb3c-d186-48fe-8350-26fe8d03b111.png?v=1762540365&width=180" alt="TapScan.pk Logo" onerror="this.style.display='none'; document.getElementById('brandFallback').style.display='flex';" />
+          <div id="brandFallback" class="brand-fallback" style="display:none;">
+            Tap<span>Scan</span>.pk
+            <span class="brand-nfc-tag">NFC</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav>
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+            <li class="nav-item"><a href="#shop" class="nav-link">Shop All <span class="nav-badge">30+</span></a></li>
+            <li class="nav-item">
+              <a href="#shop" class="nav-link">Collections ▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="#shop" onclick="setCategory('premium-stands')" class="dropdown-link"><span class="dropdown-icon">⭐</span> Premium 3D Acrylic Stands</a></li>
+                <li><a href="#shop" onclick="setCategory('simple-stands')" class="dropdown-link"><span class="dropdown-icon">💳</span> Simple &amp; Payment Stands</a></li>
+                <li><a href="#shop" onclick="setCategory('nfc-cards')" class="dropdown-link"><span class="dropdown-icon">🪪</span> Smart NFC Review Cards</a></li>
+                <li><a href="#shop" onclick="setCategory('shape-standees')" class="dropdown-link"><span class="dropdown-icon">🦷</span> Industry Shaped Standees</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#how-it-works" class="nav-link">How It Works</a></li>
+            <li class="nav-item"><a href="#reviews" class="nav-link">Reviews ★ 4.9</a></li>
+            <li class="nav-item"><a href="#faqs" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Live Search Button -->
+        <button class="action-btn" onclick="openSearch()" title="Search Stands" aria-label="Search">
+          🔍
+        </button>
+
+        <!-- Wishlist Indicator -->
+        <button class="action-btn" onclick="window.location.hash='#shop'" title="Wishlist" aria-label="Wishlist">
+          ♡
+          <span class="badge-count" id="wishlistCount">0</span>
+        </button>
+
+        <!-- Header Cart Trigger -->
+        <button class="header-cart-btn" onclick="openCartDrawer()" title="View Cart">
+          🛒 <span id="headerCartCount">0</span>
+          <span class="cart-total-price" id="headerCartPrice">Rs. 0</span>
+        </button>
+
+        <!-- WhatsApp Quick Chat Button -->
+        <button class="header-wa-btn" onclick="orderOnWhatsApp()" title="Direct WhatsApp Inquiries">
+          💬 WhatsApp
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" onclick="toggleMobileNav()" title="Open Navigation Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobileNavDrawer" class="cart-drawer-overlay" onclick="if(event.target === this) toggleMobileNav();">
+    <div class="cart-drawer" style="left:0; right:auto; transform: translateX(-100%);">
+      <div class="cart-drawer-header">
+        <h3>TapScan.pk</h3>
+        <button class="close-drawer-btn" onclick="toggleMobileNav()">✕</button>
+      </div>
+      <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+        <a href="#home" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">Home</a>
+        <a href="#shop" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">Shop All Stands</a>
+        <a href="#shop" onclick="toggleMobileNav(); setCategory('premium-stands');" style="font-size: 0.95rem; color: var(--text-secondary); padding-left: 1rem;">• Premium 3D Stands</a>
+        <a href="#shop" onclick="toggleMobileNav(); setCategory('simple-stands');" style="font-size: 0.95rem; color: var(--text-secondary); padding-left: 1rem;">• Simple &amp; Payment Stands</a>
+        <a href="#shop" onclick="toggleMobileNav(); setCategory('nfc-cards');" style="font-size: 0.95rem; color: var(--text-secondary); padding-left: 1rem;">• NFC Smart Cards</a>
+        <a href="#shop" onclick="toggleMobileNav(); setCategory('shape-standees');" style="font-size: 0.95rem; color: var(--text-secondary); padding-left: 1rem;">• Shape Standees (Dental/Burger)</a>
+        <a href="#how-it-works" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">How It Works</a>
+        <a href="#reviews" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">Customer Reviews</a>
+        <a href="#faqs" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">FAQs</a>
+        <a href="#contact" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">Contact Us</a>
+        <hr style="border:none; border-top:1px solid var(--border-light); margin: 0.5rem 0;" />
+        <button class="btn-whatsapp" onclick="toggleMobileNav(); orderOnWhatsApp();">
+          💬 Order on WhatsApp (+92 327 7008585)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live Search Overlay Modal -->
+  <div class="search-modal" id="searchModal" onclick="if(event.target === this) closeSearch();">
+    <div class="search-box">
+      <div class="search-input-wrapper">
+        <span>🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search smart stands, Google review cards, acrylic..." oninput="handleSearchInput(this.value)" />
+        <button onclick="closeSearch()" style="font-size: 1.25rem; color: var(--text-muted);">✕</button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p style="color:var(--text-muted); text-align:center; padding:1.5rem;">Start typing to search products...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN VIEW: HOME (#home) -->
+  <main id="viewHome" class="page-view active">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="dot"></span>
+            <span>Pakistan’s #1 Smart NFC &amp; QR Stand Solution</span>
+          </div>
+          <h1 class="hero-title">
+            Grow Reviews, Followers &amp; Payments in <span class="highlight">One Tap</span>.
+          </h1>
+          <p class="hero-desc">
+            Transform your counter into an automated marketing machine. Customers simply tap their smartphone or scan to leave instant 5-star Google reviews, follow your Instagram, or pay via EasyPaisa/JazzCash — <strong>100% Plug &amp; Play, No App Required</strong>.
+          </p>
+
+          <div class="hero-badges-row">
+            <div class="hero-bullet"><span class="check">✓</span> Works with All iPhones &amp; Androids</div>
+            <div class="hero-bullet"><span class="check">✓</span> Zero Monthly Fees (Lifetime Access)</div>
+            <div class="hero-bullet"><span class="check">✓</span> Custom Branded with Your Logo</div>
+            <div class="hero-bullet"><span class="check">✓</span> Cash on Delivery Across Pakistan</div>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#shop" class="btn-primary">
+              🛒 Shop Best Sellers
+            </a>
+            <button class="btn-whatsapp" onclick="orderOnWhatsApp()">
+              💬 Order on WhatsApp
+            </button>
+            <button class="btn-secondary" onclick="triggerNfcDemo()">
+              ⚡ Try NFC Simulator
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase / Interactive Standee Simulator -->
+        <div class="hero-visual-card">
+          <img src="https://www.tapscan.pk/cdn/shop/files/Smart-NFC-Google-Review-QR-Code-Standee-Premium-edition-TapScan-pk-28331491983448.jpg?v=1763768626&width=800" alt="Smart NFC Google Review Standee" class="hero-main-img" />
+          <div class="interactive-sim-box">
+            <div class="sim-headline">✨ Interactive Experience</div>
+            <div class="sim-sub">Curious how customers review your business in 2 seconds?</div>
+            <button class="tap-demo-trigger" onclick="triggerNfcDemo()">
+              📲 Tap Virtual Phone on Standee
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges (The 4 Pillars) -->
+    <section class="features-section">
+      <div class="container features-grid">
+        <div class="feature-box">
+          <div class="feature-icon-wrap">🎨</div>
+          <div class="feature-content">
+            <h4>Fully Customizable</h4>
+            <p>Your business logo, colors, and links — precision printed on acrylic.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon-wrap">🚚</div>
+          <div class="feature-content">
+            <h4>Fast Delivery</h4>
+            <p>Seamless Cash on Delivery shipping to Lahore, Karachi, Islamabad &amp; all cities.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon-wrap">⭐</div>
+          <div class="feature-content">
+            <h4>3,000+ Happy Clients</h4>
+            <p>Trusted by Pakistan's top cafés, salons, dental clinics, and retail stores.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon-wrap">🛡️</div>
+          <div class="feature-content">
+            <h4>Lifetime Durability</h4>
+            <p>Laser cut acrylic &amp; UV printing. Scratch-resistant, no monthly fees.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Our Collections -->
+    <section class="collections-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Catalog Categories</span>
+          <h2 class="section-title">Explore Our Collections</h2>
+          <p class="section-subtitle">Find the perfect smart standee or card tailored for your industry and counter setup.</p>
+        </div>
+
+        <div class="collections-grid">
+          <!-- Collection 1 -->
+          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('premium-stands');">
+            <div class="collection-img-wrap">
+              <img src="https://www.tapscan.pk/cdn/shop/files/Smart-NFC-4-in-1-Qr-code-Standee-With-3D-Cut-Acrylic-Icons-TapScan-pk-28331614732376.jpg?v=1763768618&width=800" alt="Premium 3D Stands" loading="lazy" />
+              <span class="collection-badge">Best Seller</span>
+            </div>
+            <div class="collection-info">
+              <h3>Premium Stands</h3>
+              <p>Dual NFC &amp; QR technology with 3D laser-cut acrylic icons in gold &amp; black themes.</p>
+              <span class="collection-link">Explore Stands →</span>
+            </div>
+          </div>
+
+          <!-- Collection 2 -->
+          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('simple-stands');">
+            <div class="collection-img-wrap">
+              <img src="https://www.tapscan.pk/cdn/shop/files/EasyPaisa-Qr-Code-Standee-TapScan-pk-28324882776152.jpg?v=1763768620&width=800" alt="Simple & Payment Stands" loading="lazy" />
+              <span class="collection-badge">Popular</span>
+            </div>
+            <div class="collection-info">
+              <h3>Simple &amp; Payment Stands</h3>
+              <p>Clean, compact tabletop stands for EasyPaisa, JazzCash, Raast, or single review links.</p>
+              <span class="collection-link">Explore Stands →</span>
+            </div>
+          </div>
+
+          <!-- Collection 3 -->
+          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('nfc-cards');">
+            <div class="collection-img-wrap">
+              <img src="https://www.tapscan.pk/cdn/shop/files/Smart-Google-Review-Card-QR-NFC-Review-Card-for-Fast-Reviews-TapScan-pk-28912768483416.jpg?v=1778614099&width=800" alt="NFC Smart Review Cards" loading="lazy" />
+              <span class="collection-badge">Pocket Size</span>
+            </div>
+            <div class="collection-info">
+              <h3>Smart NFC Review Cards</h3>
+              <p>Wallet-sized NFC + QR cards for influencers, field agents, doctors, and on-the-go reviews.</p>
+              <span class="collection-link">Explore Cards →</span>
+            </div>
+          </div>
+
+          <!-- Collection 4 -->
+          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('shape-standees');">
+            <div class="collection-img-wrap">
+              <img src="https://www.tapscan.pk/cdn/shop/files/Dental-Tooth-Shaped-Smart-NFC-2-in-1-Standee-For-Dentists-TapScan-pk-34403050061912.webp?v=1778614088&width=800" alt="Custom Shaped Stands" loading="lazy" />
+              <span class="collection-badge">Custom Cut</span>
+            </div>
+            <div class="collection-info">
+              <h3>Industry Shape Standees</h3>
+              <p>Specialty silhouettes: Tooth shapes for dentists, Burger shapes for eateries, and custom logos.</p>
+              <span class="collection-link">Explore Shapes →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Arrivals & Best Sellers (Product Grid with Filter Tabs) -->
+    <section class="products-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Pakistan's Top Rated</span>
+          <h2 class="section-title">New Arrivals &amp; Best Sellers</h2>
+          <p class="section-subtitle">Pre-configured, custom-branded smart stands ready to elevate your business presence.</p>
+        </div>
+
+        <div class="catalog-controls">
+          <div class="filter-pills">
+            <button class="filter-pill active" data-category="all" onclick="setCategory('all')">All Stands</button>
+            <button class="filter-pill" data-category="premium-stands" onclick="setCategory('premium-stands')">Premium 3D Stands</button>
+            <button class="filter-pill" data-category="simple-stands" onclick="setCategory('simple-stands')">Simple &amp; Payment</button>
+            <button class="filter-pill" data-category="nfc-cards" onclick="setCategory('nfc-cards')">Smart NFC Cards</button>
+            <button class="filter-pill" data-category="shape-standees" onclick="setCategory('shape-standees')">Shaped Cutouts</button>
+          </div>
+
+          <div class="sort-select-wrapper">
+            <span>Sort by:</span>
+            <select class="sort-select" onchange="handleSortChange(this.value)">
+              <option value="featured">Featured / Best Selling</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Customer Rating</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" id="homeProductsGrid">
+          <!-- Filled dynamically via app.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="#shop" class="btn-primary" style="padding: 1rem 2.5rem;">
+            View All 30+ Stand Models →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep-Dive Story: More Reviews, More Followers, More Trust -->
+    <section class="story-section">
+      <div class="container story-grid">
+        <div class="story-content">
+          <div class="story-tag">Why TapScan Works</div>
+          <h2 class="story-title">More Reviews, More Followers, More Trust</h2>
+          <p class="story-desc">
+            TapScan, a Pakistan-based business operating from Band Road, Lahore, provides ready-to-use NFC/QR stands that help businesses connect with walk-in customers instantly. One scan or tap lets customers leave a 5-star Google review, follow your Instagram, and like your Facebook page in seconds.
+          </p>
+
+          <div class="story-points">
+            <div class="story-point">
+              <div class="story-point-icon">⚡</div>
+              <div>
+                <h4>Plug-and-Play Convenience</h4>
+                <p>We handle personalization and nationwide delivery. Just share your links and logo, and your stand arrives ready to place on your counter.</p>
+              </div>
+            </div>
+            <div class="story-point">
+              <div class="story-point-icon">🏬</div>
+              <div>
+                <h4>Perfect for All Businesses</h4>
+                <p>Ideal for reception counters, cafés, aesthetic salons, dental clinics, boutiques, gyms, and retail showrooms across Pakistan.</p>
+              </div>
+            </div>
+            <div class="story-point">
+              <div class="story-point-icon">🇵🇰</div>
+              <div>
+                <h4>Nationwide Delivery &amp; COD</h4>
+                <p>Reliable door-to-door delivery with Cash on Delivery option in Lahore, Karachi, Islamabad, Rawalpindi, Peshawar, and 150+ cities.</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-whatsapp" onclick="orderOnWhatsApp()">
+            💬 Discuss Custom Design with TapScan Lahore
+          </button>
+        </div>
+
+        <div class="story-visual">
+          <img src="https://www.tapscan.pk/cdn/shop/files/Smart-NFC-3-in-1-QR-Code-Standee-with-3D-Cut-Acrylic-Icons-Vertical-Premium-edition-TapScan-pk-28331622465624.jpg?v=1763768639&width=800" alt="TapScan Stand on Counter" class="story-img" />
+          <div class="story-stat-card">
+            <div class="story-stat-num">400%</div>
+            <div class="story-stat-label">Average Increase in Monthly Google Reviews</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands That Believe in Us -->
+    <section class="brands-section">
+      <div class="container">
+        <div class="brands-header">
+          <h3>Brands That Believe in Us</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.35rem;">Powering customer engagement for leading enterprises and franchises across Pakistan</p>
+        </div>
+        <div class="brands-grid" id="brandsGrid">
+          <!-- Injected via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- What Our Customers Say (Social Proof & WhatsApp Testimonials) -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Authentic Customer Proof</span>
+          <h2 class="section-title">What Our Customers Say</h2>
+          <p class="section-subtitle">Real WhatsApp conversations and verified feedback from café owners, dentists, salon managers, and retail stores.</p>
+        </div>
+
+        <div class="testimonials-grid" id="testimonialsGrid">
+          <!-- Injected via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faqs-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Got Questions?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Everything you need to know about NFC technology, standee durability, link setup, and nationwide delivery.</p>
+        </div>
+
+        <div class="faq-container" id="homeFaqList">
+          <!-- Injected via app.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="#faqs" class="btn-secondary">View All 25+ Questions &amp; Answers →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- VIEW: FULL SHOP / CATALOG (#shop) -->
+  <section id="viewShop" class="page-view">
+    <div class="page-header-banner">
+      <h1>All Smart Stands &amp; NFC Cards</h1>
+      <p>Browse Pakistan's largest collection of smart NFC &amp; QR tabletop standees for Google reviews, social follows, and payments.</p>
+    </div>
+    <div class="container">
+      <div class="catalog-controls">
+        <div class="filter-pills">
+          <button class="filter-pill active" data-category="all" onclick="setCategory('all')">All (30)</button>
+          <button class="filter-pill" data-category="premium-stands" onclick="setCategory('premium-stands')">Premium 3D Stands</button>
+          <button class="filter-pill" data-category="simple-stands" onclick="setCategory('simple-stands')">Simple &amp; Payment</button>
+          <button class="filter-pill" data-category="nfc-cards" onclick="setCategory('nfc-cards')">Smart NFC Cards</button>
+          <button class="filter-pill" data-category="shape-standees" onclick="setCategory('shape-standees')">Shaped Cutouts</button>
+        </div>
+
+        <div class="sort-select-wrapper">
+          <span id="catalogProductCount">30 Products</span>
+          <select class="sort-select" onchange="handleSortChange(this.value)">
+            <option value="featured">Featured / Best Selling</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Customer Rating</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="products-grid" id="catalogProductsGrid"></div>
+    </div>
+  </section>
+
+  <!-- VIEW: PRODUCT DETAIL (#product/:id) -->
+  <section id="viewProductDetail" class="page-view">
+    <div id="productDetailContainer"></div>
+  </section>
+
+  <!-- VIEW: REVIEWS (#reviews) -->
+  <section id="viewReviews" class="page-view">
+    <div class="page-header-banner">
+      <h1>Customer Reviews &amp; Testimonials</h1>
+      <p>★ 4.93 / 5 Average Rating from 3,000+ businesses across Pakistan.</p>
+    </div>
+    <div class="container">
+      <div class="testimonials-grid" style="margin-bottom: 3.5rem;">
+        <!-- Testimonials -->
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW: HOW IT WORKS (#how-it-works) -->
+  <section id="viewHowItWorks" class="page-view">
+    <div class="page-header-banner">
+      <h1>How It Works – TapScan QR Solutions</h1>
+      <p>At TapScan, we make it simple for businesses in Pakistan to bridge offline customers with their online presence.</p>
+    </div>
+    <div class="container">
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading);">Select &amp; Customize</h3>
+          <p style="color: var(--text-secondary); font-size: 0.875rem;">
+            Choose your stand design (Google Review, 4-in-1, or Cutout). Send us your high-resolution business logo, brand colors, and destination links.
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading);">We Program &amp; Laser-Cut</h3>
+          <p style="color: var(--text-secondary); font-size: 0.875rem;">
+            Our technical team encodes the embedded NTAG213/215 NFC chip with your encrypted URL, generates high-contrast QR codes, and laser crafts the acrylic.
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading);">Plug &amp; Play Counter Launch</h3>
+          <p style="color: var(--text-secondary); font-size: 0.875rem;">
+            Your stand arrives ready to use via Express Courier. Place it at your cashier counter or reception desk. Customers simply tap and review!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW: ABOUT US (#about) -->
+  <section id="viewAbout" class="page-view">
+    <div class="page-header-banner">
+      <h1>About TapScan PK</h1>
+      <p>Pakistan's pioneer in smart point-of-sale customer engagement technology.</p>
+    </div>
+    <div class="container">
+      <div class="content-card">
+        <h2>Our Mission</h2>
+        <p>TapScan is a Pakistan-based online business operating from Lahore, specializing in custom QR code and smart NFC tabletop standees for businesses, restaurants, medical clinics, and service providers.</p>
+        <p>We help businesses bridge the gap between offline footfall and online reputation. With customer attention spans shrinking, asking a customer to search your business manually, type out your URL, or locate your review page fails over 90% of the time. TapScan eliminates every single friction point: one tap, and your Google review dialog opens automatically.</p>
+        <p>Every standee is proudly fabricated in our Lahore facility with state-of-the-art laser cutting, UV-resistant ink printing, and pre-programmed universal NFC chips compatible with both modern iPhones and Android smartphones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW: FAQS (#faqs) -->
+  <section id="viewFaqs" class="page-view">
+    <div class="page-header-banner">
+      <h1>Frequently Asked Questions</h1>
+      <p>Explore our complete knowledge base covering NFC compatibility, customization, and delivery.</p>
+    </div>
+    <div class="container">
+      <div class="faq-container" id="fullFaqList"></div>
+    </div>
+  </section>
+
+  <!-- VIEW: CONTACT US (#contact) -->
+  <section id="viewContact" class="page-view">
+    <div class="page-header-banner">
+      <h1>Contact TapScan PK</h1>
+      <p>Have questions about bulk orders, corporate branding, or custom shapes? We are here to help!</p>
+    </div>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="content-card">
+          <h2>Get In Touch</h2>
+          <div class="contact-info-list">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <strong>Head Office &amp; Workshop</strong>
+                <p>B3 Second floor, 28 Band Road, Lahore 54000, Pakistan</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <strong>Customer Support Phone</strong>
+                <p><a href="tel:+923277008585">+92 327 7008585</a> / <a href="tel:+923257114725">+92 325 7114725</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">💬</div>
+              <div>
+                <strong>Instant WhatsApp Chat</strong>
+                <p><a href="https://wa.me/923277008585" target="_blank" style="color:var(--whatsapp); font-weight:700;">+92 327 7008585 (Chat Now)</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <strong>Official Email</strong>
+                <p><a href="mailto:info@tapscan.pk">info@tapscan.pk</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h2>Send Us a Message</h2>
+          <form onsubmit="event.preventDefault(); showToast('Message sent! Our Lahore team will reply shortly.'); this.reset();">
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+              <div>
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-input" required placeholder="Ali Khan" />
+              </div>
+              <div>
+                <label class="form-label">Phone / WhatsApp</label>
+                <input type="tel" class="form-input" required placeholder="0300-1234567" />
+              </div>
+              <div>
+                <label class="form-label">Message / Inquiry</label>
+                <textarea class="form-textarea" rows="4" required placeholder="Tell us about your business and how many stands you need..."></textarea>
+              </div>
+              <button type="submit" class="btn-primary" style="width:100%;">Send Inquiry</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW: STORE POLICIES (#policy/:type) -->
+  <section id="viewPolicy" class="page-view">
+    <div id="policyContentContainer"></div>
+  </section>
+
+  <!-- Shopping Cart Slide-in Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay" onclick="if(event.target === this) closeCartDrawer();">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h3>🛒 Your Cart (<span id="drawerCartCount">0</span>)</h3>
+        <button class="close-drawer-btn" onclick="closeCartDrawer()" title="Close Cart">✕</button>
+      </div>
+
+      <!-- Free Delivery Progress Meter -->
+      <div class="free-shipping-progress">
+        <div class="free-shipping-msg" id="freeShippingMsg">
+          Add more items to unlock Free Delivery!
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="freeShippingBar" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items List -->
+      <div class="cart-items-list" id="drawerCartItems">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+
+      <!-- Cart Drawer Footer -->
+      <div class="cart-drawer-footer">
+        <div class="cart-coupon-row">
+          <input type="text" id="couponCodeInput" class="coupon-input" placeholder="Promo Code (TAPSCAN10)" />
+          <button class="coupon-btn" onclick="applyCoupon()">Apply</button>
+        </div>
+
+        <div class="cart-subtotal-row">
+          <span class="cart-subtotal-label">Subtotal:</span>
+          <span class="cart-subtotal-val" id="drawerSubtotal">Rs. 0</span>
+        </div>
+
+        <div class="cart-action-btns">
+          <button class="btn-checkout" onclick="openCheckout()">
+            🚀 Proceed to Checkout (COD)
+          </button>
+          <button class="btn-wa-checkout" onclick="orderOnWhatsApp()">
+            💬 Order Directly on WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pakistan COD Checkout Modal -->
+  <div class="checkout-modal-overlay" id="checkoutModalOverlay" onclick="if(event.target === this) closeCheckout();">
+    <div class="checkout-modal">
+      <div class="checkout-modal-header">
+        <h3>📦 Secure Checkout (Cash on Delivery)</h3>
+        <button onclick="closeCheckout()" style="color:#ffffff; font-size:1.25rem;">✕</button>
+      </div>
+      <div class="checkout-modal-body">
+        <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
+          <div class="order-summary-box" id="checkoutSummaryContent"></div>
+
+          <h4 style="margin-bottom:0.85rem; font-size:1rem; color:var(--primary);">1. Contact &amp; Shipping Details</h4>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" id="custName" class="form-input" required placeholder="e.g. Dr. Hamza Qureshi" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">WhatsApp Number *</label>
+              <input type="tel" id="custPhone" class="form-input" required placeholder="0327-7008585" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address (Optional)</label>
+              <input type="email" id="custEmail" class="form-input" placeholder="name@business.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">City *</label>
+              <select id="custCity" class="form-select" required>
+                <!-- Populated via app.js -->
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Complete Street Address / Counter Location *</label>
+              <input type="text" id="custAddress" class="form-input" required placeholder="Shop #, Plaza / Street name, Area" />
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Customization Notes / Links to add</label>
+              <textarea id="custNotes" class="form-textarea" rows="2" placeholder="e.g. My Google review link, Instagram handle @mybusiness..."></textarea>
+            </div>
+          </div>
+
+          <h4 style="margin-bottom:0.5rem; font-size:1rem; color:var(--primary);">2. Select Payment Method</h4>
+          <div class="payment-method-selector">
+            <div class="payment-options">
+              <div class="payment-opt-card active" data-method="cod" onclick="selectPaymentMethod('cod')">
+                <h5>💵 Cash on Delivery</h5>
+                <span style="font-size:0.7rem; color:var(--text-muted);">Pay when rider arrives</span>
+              </div>
+              <div class="payment-opt-card" data-method="jazzcash" onclick="selectPaymentMethod('jazzcash')">
+                <h5>📱 EasyPaisa / JazzCash</h5>
+                <span style="font-size:0.7rem; color:var(--text-muted);">Instant mobile transfer</span>
+              </div>
+              <div class="payment-opt-card" data-method="bank" onclick="selectPaymentMethod('bank')">
+                <h5>🏦 Bank Transfer</h5>
+                <span style="font-size:0.7rem; color:var(--text-muted);">Meezan / Alfalah IBAN</span>
+              </div>
+            </div>
+            <div class="payment-details-box" id="paymentMethodDetails">
+              <strong>Cash on Delivery (COD):</strong> Pay in cash to the courier rider upon delivery anywhere in Pakistan.
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem;">
+            ✓ Confirm Order (Pay on Delivery)
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="quick-view-overlay" id="quickViewOverlay" onclick="if(event.target === this) closeQuickView();">
+    <div class="quick-view-modal">
+      <button class="quick-close-btn" onclick="closeQuickView()">✕</button>
+      <div id="quickViewContent" style="display:contents;"></div>
+    </div>
+  </div>
+
+  <!-- Simulated Phone Popup (Live NFC Tap Demo) -->
+  <div class="nfc-tap-animation-overlay" id="nfcTapOverlay" onclick="if(event.target === this) closeNfcDemo();">
+    <div class="phone-mockup">
+      <div class="phone-speaker"></div>
+      <div class="phone-screen">
+        <div style="font-size:0.75rem; color:var(--emerald); font-weight:800; text-transform:uppercase; margin-bottom:0.5rem;">
+          ⚡ NFC Tag Detected!
+        </div>
+        <div class="google-review-badge">
+          <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span>
+          <span>Review</span>
+        </div>
+        <h4 style="font-size: 1.1rem; font-weight:700; margin-bottom: 0.25rem;">Rate Your Experience</h4>
+        <p style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1rem;">TapScan PK Flagship Store - Lahore</p>
+        <div class="google-stars">★★★★★</div>
+        <textarea style="width:100%; padding:0.6rem; border:1px solid #E7E3EF; border-radius:8px; font-size:0.8rem; margin-bottom:1rem;" rows="3">Outstanding acrylic quality! Highly recommended smart stand for all businesses.</textarea>
+        <button class="btn-primary" style="width:100%; padding:0.7rem; font-size:0.875rem;" onclick="showToast('Review submitted on Google! This is how easy it is for your customers.'); closeNfcDemo();">
+          Post Review
+        </button>
+        <button style="margin-top:0.75rem; font-size:0.75rem; color:var(--text-muted);" onclick="closeNfcDemo()">Close Simulator</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Widget -->
+  <div class="floating-whatsapp">
+    <div class="wa-chat-popup" id="waChatPopup">
+      <div class="wa-popup-header">
+        <img src="https://www.tapscan.pk/cdn/shop/files/1_2398bb3c-d186-48fe-8350-26fe8d03b111.png?v=1762540365&width=50" class="wa-avatar" alt="TapScan Agent" />
+        <div class="wa-header-info">
+          <h4>TapScan Support (Lahore)</h4>
+          <p>Online • Instant reply</p>
+        </div>
+        <button onclick="toggleWaPopup()" style="color:#ffffff; margin-left:auto; font-size:1.1rem;">✕</button>
+      </div>
+      <div class="wa-popup-body">
+        <div class="wa-bubble">
+          Assalam o Alaikum! 👋 Welcome to TapScan.pk. How can we assist you with custom NFC and QR stands today?
+        </div>
+        <div class="wa-quick-options">
+          <button class="wa-quick-btn" onclick="quickWaMessage('Hi! I want to customize a 4-in-1 NFC Stand for my business.')">
+            ✨ Customize 4-in-1 Stand
+          </button>
+          <button class="wa-quick-btn" onclick="quickWaMessage('Assalam o Alaikum, what is the delivery time to Karachi/Islamabad?')">
+            🚚 Inquire Delivery Times
+          </button>
+          <button class="wa-quick-btn" onclick="quickWaMessage('Do you offer bulk discounts for multiple branches?')">
+            🏢 Bulk Franchise Pricing
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="floating-wa-btn" onclick="toggleWaPopup()" title="Chat on WhatsApp">
+      <div class="wa-pulse"></div>
+      💬
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: About & Address -->
+      <div class="footer-col footer-about">
+        <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+          <img src="https://www.tapscan.pk/cdn/shop/files/1_2398bb3c-d186-48fe-8350-26fe8d03b111.png?v=1762540365&width=150" alt="TapScan.pk" style="height:36px; filter: brightness(0) invert(1);" />
+        </div>
+        <p>
+          TapScan is a Pakistan-based online business operating from Lahore, specializing in NFC and QR code standees for businesses, restaurants, and service providers. We help customers enable Google reviews, social media access, and digital payments through smart QR solutions with nationwide delivery across Pakistan.
+        </p>
+        <p style="font-size:0.8125rem; color:#E7E3EF;">
+          <strong>Address:</strong> B3 Second floor, 28 Band Road, Lahore 54000, Pakistan<br>
+          <strong>Phone:</strong> <a href="tel:+923277008585" style="color:#65D6C2;">+92 327 7008585</a><br>
+          <strong>Email:</strong> <a href="mailto:info@tapscan.pk" style="color:#65D6C2;">info@tapscan.pk</a><br>
+          <strong>Business Name:</strong> Tap Scan PK
+        </p>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#reviews">Customer Reviews</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#shop">All Products</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Policies -->
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul class="footer-links">
+          <li><a href="#policy/privacy">Privacy Policy</a></li>
+          <li><a href="#policy/refund">Refund &amp; Return Policy</a></li>
+          <li><a href="#policy/shipping">Shipping Policy</a></li>
+          <li><a href="#policy/terms">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Newsletter -->
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p style="font-size:0.875rem; color:#94a3b8; margin-bottom:1rem;">
+          Sign-up our Newsletter now to be the first one to receive updates about deals, discounts &amp; offers!
+        </p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed to TapScan newsletter!'); this.reset();">
+          <input type="email" class="newsletter-input" required placeholder="Enter your email address..." />
+          <button type="submit" class="btn-primary" style="padding:0.75rem;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom Bar & Payment Badges -->
+    <div class="container footer-bottom">
+      <div>
+        © 2026 TapScan.pk. All rights reserved. Precision Crafted in Lahore, Pakistan.
+      </div>
+      <div class="payment-badges-row">
+        <span class="payment-badge-tag">Cash on Delivery</span>
+        <span class="payment-badge-tag">JazzCash</span>
+        <span class="payment-badge-tag">EasyPaisa</span>
+        <span class="payment-badge-tag">Bank Transfer</span>
+        <span class="payment-badge-tag">Visa / Mastercard</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="store-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
