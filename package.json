@@ -2,7 +2,6 @@
   "name": "tapscan-pk-clone",
   "version": "1.0.0",
   "description": "Complete 1:1 Pixel-Perfect Clone of TapScan.pk with 30 products, reviews, Pakistani COD checkout and NFC simulator",
-  "main": "server.js",
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js"

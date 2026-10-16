@@ -25,7 +25,7 @@ const MIME_TYPES = {
   '.ttf': 'font/ttf'
 };
 
-const server = http.createServer((req, res) => {
+const handleRequest = (req, res) => {
   // Add CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -88,13 +88,20 @@ const server = http.createServer((req, res) => {
       }
     });
   });
-});
+};
 
-server.listen(PORT, () => {
-  console.log(`\n======================================================`);
-  console.log(`🚀 TapScan.pk Dev Server running successfully!`);
-  console.log(`📡 Local URL:   http://localhost:${PORT}`);
-  console.log(`🌐 Network:     http://127.0.0.1:${PORT}`);
-  console.log(`⚡ All 30 products & Pakistani store features ready.`);
-  console.log(`======================================================\n`);
-});
+const server = http.createServer(handleRequest);
+
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`\n======================================================`);
+    console.log(`🚀 TapScan.pk Dev Server running successfully!`);
+    console.log(`📡 Local URL:   http://localhost:${PORT}`);
+    console.log(`🌐 Network:     http://127.0.0.1:${PORT}`);
+    console.log(`⚡ All 30 products & Pakistani store features ready.`);
+    console.log(`======================================================\n`);
+  });
+}
+
+module.exports = handleRequest;
+
