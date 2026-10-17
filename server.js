@@ -92,6 +92,18 @@ const handleRequest = (req, res) => {
 
 const server = http.createServer(handleRequest);
 
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use.`);
+  } else {
+    console.error(`Server error:`, err);
+  }
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+});
+
 if (require.main === module) {
   server.listen(PORT, () => {
     console.log(`\n======================================================`);
