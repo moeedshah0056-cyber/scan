@@ -6,12 +6,43 @@
 (function () {
   'use strict';
 
-  // State
+  // Universal environment & safe global scope (prevents ReferenceError during SSR / Node execution)
+  const isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
+  const globalScope = typeof window !== 'undefined' ? window : (typeof globalThis !== 'undefined' ? globalThis : {});
+  if (typeof window === 'undefined') {
+    globalScope.window = globalScope;
+  }
+
+  // Safe localStorage access helpers (client-only lifecycle with try/catch fallback)
+  function getSafeStorage(key, defaultValue) {
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      try {
+        const item = localStorage.getItem(key);
+        return item ? JSON.parse(item) : defaultValue;
+      } catch (e) {
+        console.warn(`[TapScan] Error reading '${key}' from localStorage:`, e);
+        return defaultValue;
+      }
+    }
+    return defaultValue;
+  }
+
+  function setSafeStorage(key, value) {
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch (e) {
+        console.warn(`[TapScan] Error writing '${key}' to localStorage:`, e);
+      }
+    }
+  }
+
+  // Server-safe default state (no browser APIs executed during module initialization)
   const state = {
     products: [],
     categories: [],
-    cart: JSON.parse(localStorage.getItem('tapscan_cart') || '[]'),
-    wishlist: JSON.parse(localStorage.getItem('tapscan_wishlist') || '[]'),
+    cart: [],
+    wishlist: [],
     activeCategory: 'all',
     searchQuery: '',
     sortBy: 'featured',
@@ -25,13 +56,17 @@
   }
 
   function saveCart() {
-    localStorage.setItem('tapscan_cart', JSON.stringify(state.cart));
-    updateCartUI();
+    setSafeStorage('tapscan_cart', state.cart);
+    if (typeof document !== 'undefined') {
+      updateCartUI();
+    }
   }
 
   function saveWishlist() {
-    localStorage.setItem('tapscan_wishlist', JSON.stringify(state.wishlist));
-    updateWishlistUI();
+    setSafeStorage('tapscan_wishlist', state.wishlist);
+    if (typeof document !== 'undefined') {
+      updateWishlistUI();
+    }
   }
 
   function showToast(message, icon = '✓') {
@@ -102,11 +137,13 @@
   };
 
   function updateWishlistUI() {
+    if (typeof document === 'undefined') return;
     const countEl = document.getElementById('wishlistCount');
     if (countEl) countEl.textContent = state.wishlist.length;
   }
 
   function updateCartUI() {
+    if (typeof document === 'undefined') return;
     const totalQty = state.cart.reduce((sum, item) => sum + item.qty, 0);
     const subtotal = state.cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
     const discount = (subtotal * state.discountPercent) / 100;
@@ -401,7 +438,7 @@
 
   // Interactive Live NFC Simulator
   window.triggerNfcDemo = function () {
-    if (navigator.vibrate) {
+    if (typeof navigator !== 'undefined' && navigator.vibrate) {
       try { navigator.vibrate([100, 50, 100]); } catch (e) {}
     }
     const overlay = document.getElementById('nfcTapOverlay');
@@ -705,7 +742,11 @@
 
   // Initialize
   function init() {
-    if (window.TAPSCAN) {
+    // Client-side synchronization with localStorage
+    state.cart = getSafeStorage('tapscan_cart', []);
+    state.wishlist = getSafeStorage('tapscan_wishlist', []);
+
+    if (typeof window !== 'undefined' && window.TAPSCAN) {
       state.products = window.TAPSCAN.products || [];
       state.categories = window.TAPSCAN.collections || [];
     }
@@ -798,10 +839,23 @@
     updateWishlistUI();
   }
 
-  // DOM Content Loaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
+  // Client-side DOM Content Loaded lifecycle
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  }
+
+  // Export for SSR / Node.js / Tests
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+      state,
+      init,
+      getSafeStorage,
+      setSafeStorage,
+      formatPKR
+    };
   }
 })();

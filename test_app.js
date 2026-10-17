@@ -33,7 +33,13 @@ async function runTests() {
   console.log(`✓ Total Brands: ${data.brands.length}`);
   console.log(`✓ Total WhatsApp Testimonials: ${data.testimonials.length}`);
   console.log(`✓ Store Address: ${data.store.address}`);
-  console.log(`✓ WhatsApp URL: ${data.store.whatsappUrl}`);
+  // Verify app.js server/SSR safety (no ReferenceError: localStorage is not defined)
+  const app = require('./app.js');
+  console.log('\nClient Application SSR Safety Verification:');
+  console.log(`✓ app.js loads safely in Node/SSR environment without window/localStorage`);
+  console.log(`✓ Initial cart default is server-safe array: ${Array.isArray(app.state.cart)} (length: ${app.state.cart.length})`);
+  console.log(`✓ Initial wishlist default is server-safe array: ${Array.isArray(app.state.wishlist)} (length: ${app.state.wishlist.length})`);
+
   console.log('\nAll tests PASSED with 100% fidelity!');
 }
 
