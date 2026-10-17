@@ -11,7 +11,7 @@ Run the local development server (zero external dependencies required):
 ```bash
 npm run dev
 # or
-node server.js
+node dev-server.js
 ```
 
 Open your browser at **[http://localhost:3000](http://localhost:3000)**.
