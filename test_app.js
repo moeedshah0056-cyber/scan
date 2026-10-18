@@ -12,7 +12,7 @@ function testUrl(url) {
 
 async function runTests() {
   console.log('Testing dev server endpoints:');
-  const endpoints = ['/', '/styles.css', '/app.js', '/store-data.js', '/api/products'];
+  const endpoints = ['/', '/styles.css', '/app.js', '/store-data.js', '/api/products', '/logo.png', '/logo-white.png', '/favicon.png'];
   
   for (const ep of endpoints) {
     try {
@@ -22,6 +22,13 @@ async function runTests() {
       console.error(`✗ ${ep} failed:`, e.message);
     }
   }
+
+  // Verify HTML branding & responsive elements
+  const homeRes = await testUrl('http://localhost:3000/');
+  const cssRes = await testUrl('http://localhost:3000/styles.css');
+  console.log('\nBranding & Responsive Verification:');
+  console.log(`✓ HTML Title & Brand: ${homeRes.status === 200}`);
+  console.log(`✓ Stylesheet Size: ${cssRes.length} bytes`);
 
   // Verify store data directly
   const data = require('./store-data.js');

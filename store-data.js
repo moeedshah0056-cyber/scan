@@ -1,10 +1,10 @@
 /**
- * TapScan.pk - Complete Store Database (Universal Browser + Node)
+ * TapUp.pk - Complete Store Database (Universal Browser + Node)
  */
 const TAPSCAN_STORE_DATA = {
   "store": {
-    "name": "TapScan.pk",
-    "legalName": "Tap Scan PK",
+    "name": "TapUp.pk",
+    "legalName": "Tap Up PK",
     "tagline": "Boost Your Business in One Scan",
     "description": "Pakistan’s #1 NFC and QR code stand solution for instant Google reviews, quick social media follows, and seamless scan-to-pay payments. Ideal for cafés, salons, clinics, and all types of local businesses.",
     "phone": "+92 327 7008585",
@@ -12,14 +12,14 @@ const TAPSCAN_STORE_DATA = {
     "altPhone": "0325 7114725",
     "whatsapp": "923277008585",
     "whatsappUrl": "https://wa.me/923277008585",
-    "email": "info@tapscan.pk",
+    "email": "info@tapup.pk",
     "address": "B3 Second floor, 28 Band Road, Lahore 54000, Pakistan",
     "city": "Lahore",
     "country": "Pakistan",
     "currency": "PKR",
     "currencySymbol": "Rs.",
     "freeDeliveryThreshold": 5000,
-    "logo": "https://www.tapscan.pk/cdn/shop/files/1_2398bb3c-d186-48fe-8350-26fe8d03b111.png?v=1762540365&width=180",
+    "logo": "logo.png",
     "banners": {
       "desktop": "https://www.tapscan.pk/cdn/shop/files/banner.webp?v=1776501438&width=1500",
       "mobile": "https://www.tapscan.pk/cdn/shop/files/Web_Banner_Mobile_Version.webp?v=1776501437&width=1500",

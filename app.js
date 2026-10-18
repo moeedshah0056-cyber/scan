@@ -149,11 +149,13 @@
     const discount = (subtotal * state.discountPercent) / 100;
     const finalTotal = Math.max(0, subtotal - discount);
 
-    // Update Header
+    // Update Header & Mobile Bottom Bar
     const cartCountEl = document.getElementById('headerCartCount');
     const cartPriceEl = document.getElementById('headerCartPrice');
+    const bottomCartEl = document.getElementById('bottomCartBadge');
     if (cartCountEl) cartCountEl.textContent = totalQty;
     if (cartPriceEl) cartPriceEl.textContent = formatPKR(finalTotal);
+    if (bottomCartEl) bottomCartEl.textContent = totalQty;
 
     // Update Drawer Elements
     const drawerCountEl = document.getElementById('drawerCartCount');
@@ -226,7 +228,7 @@
     const input = document.getElementById('couponCodeInput');
     if (!input) return;
     const code = input.value.trim().toUpperCase();
-    if (code === 'TAPSCAN10' || code === 'SAVE10') {
+    if (code === 'TAPUP10' || code === 'TAPSCAN10' || code === 'SAVE10') {
       state.discountPercent = 10;
       state.appliedCoupon = code;
       showToast('Promo code applied: 10% Discount!');
@@ -234,7 +236,7 @@
     } else if (code === 'FREESHIP') {
       showToast('Free shipping promo applied!');
     } else {
-      showToast('Invalid promo code. Try "TAPSCAN10"', '⚠');
+      showToast('Invalid promo code. Try "TAPUP10"', '⚠️');
     }
   };
 
@@ -246,14 +248,14 @@
     if (productId) {
       const p = state.products.find(item => item.id === productId);
       if (p) {
-        message = `Assalam o Alaikum TapScan team! 👋\nI want to order:\n*${p.title}*\nPrice: ${formatPKR(p.price)}\nLink: https://tapscan.pk/products/${p.handle}\nPlease send customization details for logo and links.`;
+        message = `Assalam o Alaikum TapUp team! 👋\nI want to order:\n*${p.title}*\nPrice: ${formatPKR(p.price)}\nLink: https://tapup.pk/products/${p.handle}\nPlease send customization details for logo and links.`;
       }
     } else if (state.cart.length > 0) {
       const itemsList = state.cart.map((i, idx) => `${idx + 1}. ${i.title} (Qty: ${i.qty}) - ${formatPKR(i.price * i.qty)}`).join('\n');
       const total = state.cart.reduce((s, i) => s + (i.price * i.qty), 0);
-      message = `Assalam o Alaikum TapScan PK! 📦\nI would like to place an order:\n\n${itemsList}\n\n*Total Amount: ${formatPKR(total)}*\nPlease confirm availability and payment details.`;
+      message = `Assalam o Alaikum TapUp PK! 📦\nI would like to place an order:\n\n${itemsList}\n\n*Total Amount: ${formatPKR(total)}*\nPlease confirm availability and payment details.`;
     } else {
-      message = `Assalam o Alaikum TapScan team! I want to inquire about custom NFC and QR code stands for my business.`;
+      message = `Assalam o Alaikum TapUp team! I want to inquire about custom NFC and QR code stands for my business.`;
     }
 
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -339,7 +341,7 @@
       return;
     }
 
-    const orderId = 'TS-' + Math.floor(100000 + Math.random() * 900000);
+    const orderId = 'TU-' + Math.floor(100000 + Math.random() * 900000);
     const subtotal = state.cart.reduce((s, i) => s + (i.price * i.qty), 0);
     const shipping = subtotal >= 5000 ? 0 : 250;
     const discount = (subtotal * state.discountPercent) / 100;
@@ -349,7 +351,7 @@
     const modalBody = document.querySelector('.checkout-modal-body');
     const itemsText = state.cart.map(i => `• ${i.title} x ${i.qty} (${formatPKR(i.price * i.qty)})`).join('\n');
 
-    const waOrderMsg = `Assalam o Alaikum TapScan PK!\n\nNew Order Confirmed! 🎉\n*Order ID:* #${orderId}\n*Customer:* ${name}\n*Phone:* ${phone}\n*City:* ${city}\n*Address:* ${address}\n*Payment Method:* ${payment.toUpperCase()}\n\n*Ordered Items:*\n${itemsText}\n\n*Grand Total:* ${formatPKR(grandTotal)}\n${notes ? `*Special Notes:* ${notes}\n` : ''}\nPlease start preparing my standee!`;
+    const waOrderMsg = `Assalam o Alaikum TapUp PK!\n\nNew Order Confirmed! 🎉\n*Order ID:* #${orderId}\n*Customer:* ${name}\n*Phone:* ${phone}\n*City:* ${city}\n*Address:* ${address}\n*Payment Method:* ${payment.toUpperCase()}\n\n*Ordered Items:*\n${itemsText}\n\n*Grand Total:* ${formatPKR(grandTotal)}\n${notes ? `*Special Notes:* ${notes}\n` : ''}\nPlease start preparing my standee!`;
 
     modalBody.innerHTML = `
       <div class="order-success-card">
@@ -602,6 +604,12 @@
       const href = link.getAttribute('href');
       link.classList.toggle('active', href === hash || (href === '#home' && hash === ''));
     });
+
+    // Update Mobile Bottom Bar active states
+    const bHome = document.getElementById('bottomNavHome');
+    const bShop = document.getElementById('bottomNavShop');
+    if (bHome) bHome.classList.toggle('active', route === '#home' || !route || route === '');
+    if (bShop) bShop.classList.toggle('active', route === '#shop' || route === '#collections' || route === '#product');
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
 

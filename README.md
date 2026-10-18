@@ -1,6 +1,6 @@
-# TapScan.pk - Complete 1:1 Pixel-Perfect Clone
+# TapUp.pk - Smart NFC & QR Code Standees
 
-A complete, high-fidelity replica of **[TapScan.pk](https://tapscan.pk)** — Pakistan’s #1 smart NFC and QR code standee solution for instant Google reviews, social media follows, and digital scan-to-pay payments.
+A complete, high-fidelity responsive e-commerce web platform for **[TapUp.pk](https://tapup.pk)** — Pakistan’s #1 smart NFC and QR code standee solution for instant Google reviews, social media follows, and digital scan-to-pay payments.
 
 ---
 

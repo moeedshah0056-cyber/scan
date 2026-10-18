@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pakistan's Smart QR Code Stand: Get Reviews, Social Follows & Payment – TapScan.pk</title>
-  <meta name="description" content="Boost your business with Tapscan.pk — Pakistan’s #1 NFC and QR code stand solution for instant Google reviews, quick social media follows, and seamless scan-to-pay payments. Ideal for cafés, salons, clinics, and local businesses." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Pakistan's Smart QR Code Stand: Get Reviews, Social Follows & Payment – TapUp.pk</title>
+  <meta name="description" content="Boost your business with TapUp.pk — Pakistan’s #1 NFC and QR code stand solution for instant Google reviews, quick social media follows, and seamless scan-to-pay payments. Ideal for cafés, salons, clinics, and local businesses." />
   
   <!-- Open Graph -->
-  <meta property="og:site_name" content="TapScan.pk" />
-  <meta property="og:title" content="Pakistan's Smart QR Code Stand: Get Reviews, Social Follows & Payment" />
+  <meta property="og:site_name" content="TapUp.pk" />
+  <meta property="og:title" content="Pakistan's Smart QR Code Stand: Get Reviews, Social Follows & Payment – TapUp.pk" />
   <meta property="og:description" content="Pakistan’s #1 NFC and QR code stand solution for instant Google reviews, social media follows, and seamless scan-to-pay payments." />
-  <meta property="og:image" content="https://www.tapscan.pk/cdn/shop/files/insta_post_of_customer_reviews.jpg?v=1762556863" />
+  <meta property="og:image" content="logo.png" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#171717" />
+  <meta name="theme-color" content="#0066FF" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://www.tapscan.pk/cdn/shop/files/1_2398bb3c-d186-48fe-8350-26fe8d03b111.png?v=1762540365&width=32" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
@@ -28,7 +29,7 @@
     <div class="container announcement-content">
       <div class="announcement-text">
         <span class="announcement-badge">NEW</span>
-        <span>🚀 Boost Your Business in One Scan — Instant Google Reviews &amp; Social Follows!</span>
+        <span>🚀 Boost Your Business in One Tap &amp; Scan — Instant Google Reviews &amp; Social Follows!</span>
       </div>
       <div class="announcement-contact">
         <a href="tel:+923277008585">📞 0327 7008585</a>
@@ -44,10 +45,10 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="header-left">
-        <a href="#home" class="brand-logo" title="TapScan.pk Home">
-          <img src="https://www.tapscan.pk/cdn/shop/files/1_2398bb3c-d186-48fe-8350-26fe8d03b111.png?v=1762540365&width=180" alt="TapScan.pk Logo" onerror="this.style.display='none'; document.getElementById('brandFallback').style.display='flex';" />
+        <a href="#home" class="brand-logo" title="TapUp.pk Home">
+          <img src="logo.png" alt="TapUp.pk Logo" onerror="this.style.display='none'; document.getElementById('brandFallback').style.display='flex';" />
           <div id="brandFallback" class="brand-fallback" style="display:none;">
-            Tap<span>Scan</span>.pk
+            Tap<span>Up</span>
             <span class="brand-nfc-tag">NFC</span>
           </div>
         </a>
@@ -110,7 +111,10 @@
   <div id="mobileNavDrawer" class="cart-drawer-overlay" onclick="if(event.target === this) toggleMobileNav();">
     <div class="cart-drawer" style="left:0; right:auto; transform: translateX(-100%);">
       <div class="cart-drawer-header">
-        <h3>TapScan.pk</h3>
+        <div style="display:flex; align-items:center; gap:0.6rem;">
+          <img src="logo.png" alt="TapUp Logo" style="height:32px; width:auto; object-fit:contain;" />
+          <h3 style="margin:0; font-size:1.2rem; font-weight:800; color:var(--primary);">TapUp<span style="color:var(--brand-blue);">.pk</span></h3>
+        </div>
         <button class="close-drawer-btn" onclick="toggleMobileNav()">✕</button>
       </div>
       <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
@@ -753,9 +757,9 @@
           <span>Review</span>
         </div>
         <h4 style="font-size: 1.1rem; font-weight:700; margin-bottom: 0.25rem;">Rate Your Experience</h4>
-        <p style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1rem;">TapScan PK Flagship Store - Lahore</p>
+        <p style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1rem;">TapUp PK Flagship Store - Lahore</p>
         <div class="google-stars">★★★★★</div>
-        <textarea style="width:100%; padding:0.6rem; border:1px solid #E7E3EF; border-radius:8px; font-size:0.8rem; margin-bottom:1rem;" rows="3">Outstanding acrylic quality! Highly recommended smart stand for all businesses.</textarea>
+        <textarea style="width:100%; padding:0.6rem; border:1px solid var(--border-light); border-radius:8px; font-size:0.8rem; margin-bottom:1rem;" rows="3">Outstanding acrylic quality! Highly recommended smart stand for all businesses.</textarea>
         <button class="btn-primary" style="width:100%; padding:0.7rem; font-size:0.875rem;" onclick="showToast('Review submitted on Google! This is how easy it is for your customers.'); closeNfcDemo();">
           Post Review
         </button>
@@ -768,16 +772,16 @@
   <div class="floating-whatsapp">
     <div class="wa-chat-popup" id="waChatPopup">
       <div class="wa-popup-header">
-        <img src="https://www.tapscan.pk/cdn/shop/files/1_2398bb3c-d186-48fe-8350-26fe8d03b111.png?v=1762540365&width=50" class="wa-avatar" alt="TapScan Agent" />
+        <img src="favicon.png" class="wa-avatar" alt="TapUp Agent" />
         <div class="wa-header-info">
-          <h4>TapScan Support (Lahore)</h4>
+          <h4>TapUp Support (Lahore)</h4>
           <p>Online • Instant reply</p>
         </div>
         <button onclick="toggleWaPopup()" style="color:#ffffff; margin-left:auto; font-size:1.1rem;">✕</button>
       </div>
       <div class="wa-popup-body">
         <div class="wa-bubble">
-          Assalam o Alaikum! 👋 Welcome to TapScan.pk. How can we assist you with custom NFC and QR stands today?
+          Assalam o Alaikum! 👋 Welcome to TapUp.pk. How can we assist you with custom NFC and QR stands today?
         </div>
         <div class="wa-quick-options">
           <button class="wa-quick-btn" onclick="quickWaMessage('Hi! I want to customize a 4-in-1 NFC Stand for my business.')">
@@ -801,22 +805,49 @@
   <!-- Toast Notification Container -->
   <div class="toast-container" id="toastContainer"></div>
 
+  <!-- Mobile Bottom Action Bar (Sticky Thumb Navigation) -->
+  <nav class="mobile-bottom-bar" aria-label="Mobile Navigation">
+    <a href="#home" class="bottom-bar-item active" id="bottomNavHome">
+      <span class="bottom-bar-icon">🏠</span>
+      <span class="bottom-bar-label">Home</span>
+    </a>
+    <a href="#shop" class="bottom-bar-item" id="bottomNavShop">
+      <span class="bottom-bar-icon">🛍️</span>
+      <span class="bottom-bar-label">Shop</span>
+    </a>
+    <button class="bottom-bar-item" onclick="openSearch()" id="bottomNavSearch">
+      <span class="bottom-bar-icon">🔍</span>
+      <span class="bottom-bar-label">Search</span>
+    </button>
+    <button class="bottom-bar-item" onclick="openCartDrawer()" id="bottomNavCart">
+      <span class="bottom-bar-icon">
+        🛒
+        <span class="bottom-badge" id="bottomCartBadge">0</span>
+      </span>
+      <span class="bottom-bar-label">Cart</span>
+    </button>
+    <button class="bottom-bar-item bottom-bar-wa" onclick="orderOnWhatsApp()" id="bottomNavWA">
+      <span class="bottom-bar-icon">💬</span>
+      <span class="bottom-bar-label">WhatsApp</span>
+    </button>
+  </nav>
+
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <!-- Col 1: About & Address -->
       <div class="footer-col footer-about">
         <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
-          <img src="https://www.tapscan.pk/cdn/shop/files/1_2398bb3c-d186-48fe-8350-26fe8d03b111.png?v=1762540365&width=150" alt="TapScan.pk" style="height:36px; filter: brightness(0) invert(1);" />
+          <img src="logo-white.png" alt="TapUp.pk" style="height:44px; width:auto; object-fit:contain;" />
         </div>
         <p>
-          TapScan is a Pakistan-based online business operating from Lahore, specializing in NFC and QR code standees for businesses, restaurants, and service providers. We help customers enable Google reviews, social media access, and digital payments through smart QR solutions with nationwide delivery across Pakistan.
+          TapUp is Pakistan's leading smart NFC and QR code standee solution provider operating from Lahore. We help restaurants, salons, clinics, retail shops, and corporate enterprises gain instant Google reviews, social media followers, and digital payments in a single touch.
         </p>
-        <p style="font-size:0.8125rem; color:#E7E3EF;">
+        <p style="font-size:0.8125rem; color:#E2E8F0;">
           <strong>Address:</strong> B3 Second floor, 28 Band Road, Lahore 54000, Pakistan<br>
-          <strong>Phone:</strong> <a href="tel:+923277008585" style="color:#65D6C2;">+92 327 7008585</a><br>
-          <strong>Email:</strong> <a href="mailto:info@tapscan.pk" style="color:#65D6C2;">info@tapscan.pk</a><br>
-          <strong>Business Name:</strong> Tap Scan PK
+          <strong>Phone:</strong> <a href="tel:+923277008585" style="color:var(--brand-mint); font-weight:600;">+92 327 7008585</a><br>
+          <strong>Email:</strong> <a href="mailto:info@tapup.pk" style="color:var(--brand-mint); font-weight:600;">info@tapup.pk</a><br>
+          <strong>Business Name:</strong> Tap Up PK
         </p>
       </div>
 
@@ -850,7 +881,7 @@
         <p style="font-size:0.875rem; color:#94a3b8; margin-bottom:1rem;">
           Sign-up our Newsletter now to be the first one to receive updates about deals, discounts &amp; offers!
         </p>
-        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed to TapScan newsletter!'); this.reset();">
+        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed to TapUp newsletter!'); this.reset();">
           <input type="email" class="newsletter-input" required placeholder="Enter your email address..." />
           <button type="submit" class="btn-primary" style="padding:0.75rem;">Subscribe</button>
         </form>
@@ -860,7 +891,7 @@
     <!-- Bottom Bar & Payment Badges -->
     <div class="container footer-bottom">
       <div>
-        © 2026 TapScan.pk. All rights reserved. Precision Crafted in Lahore, Pakistan.
+        © 2026 TapUp.pk. All rights reserved. Precision Crafted in Lahore, Pakistan.
       </div>
       <div class="payment-badges-row">
         <span class="payment-badge-tag">Cash on Delivery</span>
