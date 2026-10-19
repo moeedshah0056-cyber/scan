@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pakistan's Smart QR Code Stand: Get Reviews, Social Follows &amp; Payment – TapUp.pk</title>
   <meta name="description" content="Boost your business with TapUp.pk — Pakistan’s #1 NFC and QR code stand solution for instant Google reviews, quick social media follows, and seamless scan-to-pay payments. Ideal for cafés, salons, clinics, and local businesses." />
   
@@ -18,6 +18,51 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" />
+
+  <!-- Critical Mobile Layout Reset -->
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      position: relative;
+      box-sizing: border-box;
+    }
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      min-width: 0;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      box-sizing: border-box;
+    }
+  </style>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
@@ -58,7 +103,7 @@
     <div class="container header-inner">
       <div class="header-left">
         <a href="#home" class="brand-logo" title="TapUp.pk Home" aria-label="TapUp.pk Home">
-          <img src="logo.png" alt="TapUp.pk Logo" onerror="this.style.display='none'; document.getElementById('brandFallback').style.display='flex';" />
+          <img src="logo.png" alt="TapUp.pk Logo" height="48" style="height:48px; width:auto; max-width:100%;" onerror="this.style.display='none'; document.getElementById('brandFallback').style.display='flex';" />
           <div id="brandFallback" class="brand-fallback" style="display:none;">
             Tap<span>Up</span>
             <span class="brand-nfc-tag">NFC</span>
@@ -165,7 +210,7 @@
     <div class="cart-drawer mobile-nav-panel">
       <div class="cart-drawer-header">
         <div class="mobile-nav-brand">
-          <img src="logo.png" alt="TapUp Logo" class="mobile-nav-logo" />
+          <img src="logo.png" alt="TapUp Logo" class="mobile-nav-logo" height="32" style="height:32px; width:auto; max-width:100%;" />
           <h3 class="mobile-nav-title">TapUp<span>.pk</span></h3>
         </div>
         <button class="close-drawer-btn" onclick="toggleMobileNav()" aria-label="Close navigation menu">
@@ -467,7 +512,7 @@
         </div>
 
         <div class="catalog-view-all-box">
-          <a href="#shop" class="btn-primary" style="padding: 1rem 2.5rem;">
+          <a href="#shop" class="btn-primary" style="max-width: 100%; padding: 1rem 1.5rem;">
             View All 30+ Stand Models
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -935,7 +980,7 @@
           <svg viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" class="ui-icon ui-icon-star" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" class="ui-icon ui-icon-star" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <textarea style="width:100%; padding:0.6rem; border:1px solid var(--border-light); border-radius:8px; font-size:0.8rem; margin-bottom:1rem;" rows="3" aria-label="Review commentary">Outstanding acrylic quality! Highly recommended smart stand for all businesses.</textarea>
+        <textarea style="width:100%; box-sizing:border-box; padding:0.6rem; border:1px solid var(--border-light); border-radius:8px; font-size:0.8rem; margin-bottom:1rem;" rows="3" aria-label="Review commentary">Outstanding acrylic quality! Highly recommended smart stand for all businesses.</textarea>
         <button class="btn-primary" style="width:100%; padding:0.75rem; font-size:0.875rem;" onclick="showToast('Review submitted on Google! This is how easy it is for your customers.'); closeNfcDemo();">
           Post Review
         </button>
@@ -1027,7 +1072,7 @@
       <!-- Col 1: About & Address -->
       <div class="footer-col footer-about">
         <div class="footer-brand-wrap">
-          <img src="logo-white.png" alt="TapUp.pk" class="footer-logo" />
+          <img src="logo-white.png" alt="TapUp.pk" class="footer-logo" height="42" style="height:42px; width:auto; max-width:100%;" />
         </div>
         <p>
           TapUp is Pakistan's leading smart NFC and QR code standee solution provider operating from Lahore. We help restaurants, salons, clinics, retail shops, and corporate enterprises gain instant Google reviews, social media followers, and digital payments in a single touch.

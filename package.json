@@ -5,7 +5,8 @@
   "scripts": {
     "build": "echo 'Static assets ready'",
     "dev": "node dev-server.js",
-    "test": "node test_app.js && node test_full_validation.js"
+    "test": "node test_app.js && node test_full_validation.js && node test_all_viewports.js",
+    "test:viewports": "node test_all_viewports.js"
   },
   "keywords": [
     "tapscan",
