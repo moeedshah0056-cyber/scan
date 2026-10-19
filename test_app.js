@@ -12,7 +12,7 @@ function testUrl(url) {
 
 async function runTests() {
   console.log('Testing dev server endpoints:');
-  const endpoints = ['/', '/styles.css', '/app.js', '/store-data.js', '/api/products', '/logo.png', '/logo-white.png', '/favicon.png'];
+  const endpoints = ['/', '/styles.css', '/app.js', '/icons.js', '/store-data.js', '/api/products', '/logo.png', '/logo-white.png', '/favicon.png'];
   
   for (const ep of endpoints) {
     try {

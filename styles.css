@@ -128,6 +128,322 @@ button {
   padding: 0 1.25rem;
 }
 
+/* Accessibility & Focus Indicators */
+:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+}
+
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* ==========================================================================
+   Professional Vector Icon System (Lucide & Brand Icons)
+   ========================================================================== */
+.ui-icon {
+  width: 1.15em;
+  height: 1.15em;
+  display: inline-block;
+  vertical-align: -0.15em;
+  flex-shrink: 0;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: transform var(--transition-fast), stroke var(--transition-fast), fill var(--transition-fast);
+}
+
+.ui-icon-whatsapp {
+  fill: currentColor;
+  stroke: none;
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.ui-stars-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  vertical-align: middle;
+}
+
+.ui-icon-star {
+  width: 15px;
+  height: 15px;
+}
+
+.dropdown-caret {
+  width: 0.9em;
+  height: 0.9em;
+  margin-left: 0.25rem;
+}
+
+.nav-star {
+  width: 12px;
+  height: 12px;
+  margin-right: 2px;
+}
+
+.nav-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(245, 158, 11, 0.12);
+  color: #b45309;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 0.35rem;
+}
+
+.floating-wa-svg {
+  width: 28px;
+  height: 28px;
+}
+
+.toast-icon-wrap .ui-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.feature-icon-wrap .ui-icon {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.75;
+}
+
+.search-input-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+}
+
+.bullet-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--emerald-light);
+  color: var(--emerald);
+  flex-shrink: 0;
+}
+
+.bullet-icon .ui-icon {
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb-nav a {
+  color: var(--text-secondary);
+}
+
+.breadcrumb-nav a:hover {
+  color: var(--brand-blue);
+}
+
+.breadcrumb-nav .current {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Product Detail Page Enhancements */
+.product-detail-card {
+  display: grid;
+  position: static;
+  box-shadow: var(--shadow-lg);
+  max-height: none;
+  margin-bottom: 3rem;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+}
+
+.detail-main-photo {
+  height: 420px;
+  width: 100%;
+  object-fit: contain;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.detail-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.85rem;
+  line-height: 1.2;
+}
+
+.detail-trust-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-trust-box .trust-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.detail-trust-box .trust-line strong {
+  color: var(--text-primary);
+}
+
+.detail-trust-box .trust-line .ui-icon {
+  color: var(--brand-blue);
+}
+
+.detail-action-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.detail-qty-stepper {
+  height: 48px;
+}
+
+.detail-add-btn,
+.detail-wa-btn {
+  height: 48px;
+  font-size: 0.95rem;
+}
+
+/* Mobile Nav Drawer Enhancements */
+.mobile-nav-panel {
+  left: 0;
+  right: auto;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+#mobileNavDrawer.open .mobile-nav-panel {
+  transform: translateX(0);
+}
+
+.mobile-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.mobile-nav-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.mobile-nav-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+.mobile-nav-title span {
+  color: var(--brand-blue);
+}
+
+.mobile-nav-links-wrap {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+  flex: 1;
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  background: var(--accent-light);
+  color: var(--brand-blue);
+}
+
+.mobile-sublinks-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  margin-left: 0.75rem;
+  border-left: 2px solid var(--border-light);
+}
+
+.mobile-group-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  padding-left: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.mobile-sublink {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.mobile-sublink:hover,
+.mobile-sublink:active {
+  color: var(--brand-blue);
+  background: var(--bg-subtle);
+}
+
+.mobile-nav-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.mobile-wa-btn {
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+}
+
 /* ==========================================================================
    Top Announcement Bar
    ========================================================================== */
@@ -2947,13 +3263,14 @@ button {
     padding: 1.25rem;
   }
 
-  /* Floating WhatsApp on Mobile */
+  /* Floating WhatsApp on Mobile - safe above bottom bar */
   .floating-whatsapp {
-    bottom: 78px; /* Safe distance above mobile bottom bar */
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
     right: 16px;
+    z-index: 95;
   }
   .wa-chat-popup {
-    bottom: 70px;
+    bottom: calc(68px + env(safe-area-inset-bottom, 0px));
     right: 0;
     width: calc(100vw - 32px);
     max-width: 360px;
@@ -2961,9 +3278,19 @@ button {
 
   /* Toast position above bottom bar */
   .toast-container {
-    bottom: 75px;
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
     left: 15px;
     right: 15px;
+  }
+
+  /* Prevent iOS zoom on input focus */
+  .form-input,
+  .form-select,
+  .form-textarea,
+  .search-input,
+  .coupon-input,
+  .newsletter-input {
+    font-size: 16px;
   }
 
   /* Testimonials, Steps, Contact Grids */
@@ -2981,6 +3308,17 @@ button {
   .story-stat-card {
     position: static;
     margin-top: 1rem;
+  }
+
+  /* Product Detail on Mobile */
+  .product-detail-card {
+    grid-template-columns: 1fr;
+  }
+  .detail-main-photo {
+    height: 280px;
+  }
+  .detail-title {
+    font-size: 1.75rem;
   }
 
   /* Footer */
@@ -3004,19 +3342,21 @@ button {
     height: 32px;
   }
   .action-btn {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
   }
   .header-cart-btn {
-    padding: 0.45rem 0.75rem;
+    padding: 0.5rem 0.85rem;
+    min-height: 44px;
   }
   
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
+    line-height: 1.18;
   }
   .hero-pill {
     font-size: 0.75rem;
-    padding: 0.3rem 0.65rem;
+    padding: 0.35rem 0.75rem;
   }
   
   .collections-grid {
@@ -3026,18 +3366,31 @@ button {
     grid-template-columns: 1fr;
   }
 
-  /* On very small screens, products grid remains 2 columns but with tight gap */
+  /* Modern 2-column e-commerce grid on mobile */
   .products-grid {
-    gap: 0.65rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
   .product-details {
-    padding: 0.65rem;
+    padding: 0.75rem 0.65rem;
   }
   .product-title {
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
+    line-height: 1.3;
+    height: 2.6em;
   }
   .product-price-row {
     margin-bottom: 0.65rem;
+  }
+  .btn-add-cart {
+    font-size: 0.75rem;
+    padding: 0.55rem 0.4rem;
+    min-height: 42px;
+  }
+  .btn-wa-order {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
   }
 
   .form-grid {
@@ -3054,12 +3407,81 @@ button {
   }
 }
 
-/* Extra Small Phones (max-width: 360px) */
+/* Extra Small Phones (max-width: 360px - e.g. Galaxy Fold, iPhone SE 1st gen) */
 @media (max-width: 360px) {
+  .container {
+    padding: 0 0.65rem;
+  }
   .products-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .product-thumb-wrap {
+    aspect-ratio: 1 / 1;
   }
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-whatsapp,
+  .hero-cta-group .btn-secondary {
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    min-height: 46px;
+  }
+  .detail-action-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .detail-add-btn,
+  .detail-wa-btn {
+    width: 100%;
+  }
+}
+
+/* Ultra Small Screens (max-width: 320px) */
+@media (max-width: 320px) {
+  .hero-title {
+    font-size: 1.45rem;
+  }
+  .section-title {
+    font-size: 1.55rem;
+  }
+  .header-actions {
+    gap: 0.35rem;
+  }
+  .action-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Wide Displays (1440px and above) */
+@media (min-width: 1440px) {
+  :root {
+    --max-width: 1360px;
+  }
+  .hero-title {
+    font-size: 3.6rem;
+  }
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+/* Accessibility: Support Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-pill .dot {
+    animation: none;
+  }
+  .wa-pulse {
+    animation: none;
   }
 }

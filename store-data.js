@@ -7,11 +7,11 @@ const TAPSCAN_STORE_DATA = {
     "legalName": "Tap Up PK",
     "tagline": "Boost Your Business in One Scan",
     "description": "Pakistan’s #1 NFC and QR code stand solution for instant Google reviews, quick social media follows, and seamless scan-to-pay payments. Ideal for cafés, salons, clinics, and all types of local businesses.",
-    "phone": "+92 327 7008585",
-    "phoneDisplay": "0327 7008585",
+    "phone": "+92 321 3010900",
+    "phoneDisplay": "0321 3010900",
     "altPhone": "0325 7114725",
-    "whatsapp": "923277008585",
-    "whatsappUrl": "https://wa.me/923277008585",
+    "whatsapp": "923213010900",
+    "whatsappUrl": "https://wa.me/923213010900",
     "email": "info@tapup.pk",
     "address": "B3 Second floor, 28 Band Road, Lahore 54000, Pakistan",
     "city": "Lahore",
@@ -303,10 +303,10 @@ const TAPSCAN_STORE_DATA = {
     "We believe that every business, regardless of size, deserves access to simple yet powerful digital tools. TapScan’s solutions are designed to bridge the gap between offline interactions and online engagement, allowing businesses to transform customer experiences in seconds. Whether you want more reviews, more social media followers, or easier cashless payments, TapScan makes it possible with just one scan.",
     "Our vision is to make digital transformation accessible for all Pakistani businesses. By leveraging QR code and NFC technology, we aim to create smarter, faster, and more connected business environments across the country. We help businesses not only improve customer engagement but also increase operational efficiency, customer satisfaction, and long-term growth.",
     "Address: B3 Second floor, 28 Band Road,",
-    "Email: [email&#160;protected]Phone: +92 327 7008585",
+    "Email: [email&#160;protected]Phone: +92 321 3010900",
     "TapScan is a Pakistan-based online business operating from Lahore, specializing in NFC and QR code standees for businesses, restaurants, and service providers. We help customers enable Google reviews, social media access, and digital payments through smart QR solutions with nationwide delivery across Pakistan.",
     "Business information & Contact: \n\nAddress: B3 Second floor, 28 Band Road,",
-    "Email: [email&#160;protected]Phone: +92 327 7008585",
+    "Email: [email&#160;protected]Phone: +92 321 3010900",
     "Quick Links\r\n                      \r\n                      Quick Links\r\n                      \r\n                            \r\n                                    \r\n                                    About Us\r\n                                    \r\n                                \r\n                                    \r\n                                    Contact us\r\n                                    \r\n                                \r\n                                    \r\n                                    Privacy Policy\r\n                                    \r\n                                \r\n                                    \r\n                                    Refund Policy\r\n                                    \r\n                                \r\n                                    \r\n                                    Shipping Policy\r\n                                    \r\n                                \r\n                                    \r\n                                    Terms of Service\r\n                                    \r\n                                \r\n                                    \r\n                                    Blog\r\n                                    \r\n                                \r\n                                    \r\n                                    FAQs\r\n                                    \r\n                                \r\n                                    \r\n                                    How it works\r\n                                    \r\n                                \r\n                            \r\n                \r\n            \r\n                \r\n                      \r\n                      \r\n                          Newsletter\r\n                      \r\n                      Newsletter\r\n                      \rSign-up our Newsletter now to be the first one to receive updates about deals, discounts & offers!"
   ],
   "policies": {
@@ -329,7 +329,7 @@ const TAPSCAN_STORE_DATA = {
       "Business & Contact Information",
       "Address: B3 Second floor, 28 Band Road,",
       "Lahore 54000, Pakistan",
-      "Email: [email&#160;protected]Phone: +92 327 7008585",
+      "Email: [email&#160;protected]Phone: +92 321 3010900",
       "Business Name: Tap Scan PK"
     ],
     "refund": [
@@ -364,13 +364,13 @@ const TAPSCAN_STORE_DATA = {
       "If the return is approved due to our error, TapScan.pk will cover return shipping",
       "Unauthorized returns sent without approval may not be accepted",
       "For any return, refund, or order-related concerns, please contact our support team:",
-      "Email: [email&#160;protected]Phone: +92 327 7008585",
+      "Email: [email&#160;protected]Phone: +92 321 3010900",
       "We aim to respond to all inquiries within 24–48 business hours.",
       "For any questions regarding refunds, replacements, or order-related concerns, customers may contact our support team using the details below. We aim to respond to all inquiries within 24–48 business hours.",
       "Business & Contact Information",
       "Address: B3 Second floor, 28 Band Road,",
       "Lahore 54000, Pakistan",
-      "Email: [email&#160;protected]Phone: +92 327 7008585",
+      "Email: [email&#160;protected]Phone: +92 321 3010900",
       "Business Name: Tap Scan PK"
     ],
     "shipping": [
@@ -395,7 +395,7 @@ const TAPSCAN_STORE_DATA = {
       "Business & Contact Information",
       "Address: B3 Second floor, 28 Band Road,",
       "Lahore 54000, Pakistan",
-      "Email: [email&#160;protected]Phone: +92 327 7008585",
+      "Email: [email&#160;protected]Phone: +92 321 3010900",
       "Business Name: Tap Scan PK"
     ],
     "terms": [
@@ -417,7 +417,7 @@ const TAPSCAN_STORE_DATA = {
       "Business & Contact Information",
       "Address: B3 Second floor, 28 Band Road,",
       "Lahore 54000, Pakistan",
-      "Email: [email&#160;protected]Phone: +92 327 7008585",
+      "Email: [email&#160;protected]Phone: +92 321 3010900",
       "Business Name: Tap Scan PK"
     ]
   },

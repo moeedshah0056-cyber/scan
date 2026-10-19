@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Pakistan's Smart QR Code Stand: Get Reviews, Social Follows & Payment – TapUp.pk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <title>Pakistan's Smart QR Code Stand: Get Reviews, Social Follows &amp; Payment – TapUp.pk</title>
   <meta name="description" content="Boost your business with TapUp.pk — Pakistan’s #1 NFC and QR code stand solution for instant Google reviews, quick social media follows, and seamless scan-to-pay payments. Ideal for cafés, salons, clinics, and local businesses." />
   
   <!-- Open Graph -->
   <meta property="og:site_name" content="TapUp.pk" />
-  <meta property="og:title" content="Pakistan's Smart QR Code Stand: Get Reviews, Social Follows & Payment – TapUp.pk" />
+  <meta property="og:title" content="Pakistan's Smart QR Code Stand: Get Reviews, Social Follows &amp; Payment – TapUp.pk" />
   <meta property="og:description" content="Pakistan’s #1 NFC and QR code stand solution for instant Google reviews, social media follows, and seamless scan-to-pay payments." />
   <meta property="og:image" content="logo.png" />
   <meta property="og:type" content="website" />
@@ -25,27 +25,39 @@
 <body>
 
   <!-- Top Announcement Bar -->
-  <div class="announcement-bar">
+  <aside class="announcement-bar" aria-label="Announcement">
     <div class="container announcement-content">
       <div class="announcement-text">
         <span class="announcement-badge">NEW</span>
-        <span>🚀 Boost Your Business in One Tap &amp; Scan — Instant Google Reviews &amp; Social Follows!</span>
+        <span class="announcement-msg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Boost Your Business in One Tap &amp; Scan — Instant Google Reviews &amp; Social Follows!
+        </span>
       </div>
       <div class="announcement-contact">
-        <a href="tel:+923277008585">📞 0327 7008585</a>
-        <span>•</span>
-        <span>📍 Lahore, Pakistan</span>
-        <span>•</span>
-        <span>🚚 Nationwide COD Delivery</span>
+        <a href="tel:+923213010900" title="Call TapScan Customer Support">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0321 3010900
+        </a>
+        <span class="announcement-divider" aria-hidden="true">•</span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Lahore, Pakistan
+        </span>
+        <span class="announcement-divider" aria-hidden="true">•</span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
+          Nationwide COD Delivery
+        </span>
       </div>
     </div>
-  </div>
+  </aside>
 
   <!-- Sticky Header & Nav -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container header-inner">
       <div class="header-left">
-        <a href="#home" class="brand-logo" title="TapUp.pk Home">
+        <a href="#home" class="brand-logo" title="TapUp.pk Home" aria-label="TapUp.pk Home">
           <img src="logo.png" alt="TapUp.pk Logo" onerror="this.style.display='none'; document.getElementById('brandFallback').style.display='flex';" />
           <div id="brandFallback" class="brand-fallback" style="display:none;">
             Tap<span>Up</span>
@@ -54,21 +66,60 @@
         </a>
 
         <!-- Desktop Navigation -->
-        <nav>
+        <nav aria-label="Main Navigation">
           <ul class="nav-menu">
             <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
             <li class="nav-item"><a href="#shop" class="nav-link">Shop All <span class="nav-badge">30+</span></a></li>
-            <li class="nav-item">
-              <a href="#shop" class="nav-link">Collections ▾</a>
+            <li class="nav-item nav-has-dropdown">
+              <a href="#shop" class="nav-link" aria-haspopup="true">
+                Collections
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon dropdown-caret" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </a>
               <ul class="dropdown-menu">
-                <li><a href="#shop" onclick="setCategory('premium-stands')" class="dropdown-link"><span class="dropdown-icon">⭐</span> Premium 3D Acrylic Stands</a></li>
-                <li><a href="#shop" onclick="setCategory('simple-stands')" class="dropdown-link"><span class="dropdown-icon">💳</span> Simple &amp; Payment Stands</a></li>
-                <li><a href="#shop" onclick="setCategory('nfc-cards')" class="dropdown-link"><span class="dropdown-icon">🪪</span> Smart NFC Review Cards</a></li>
-                <li><a href="#shop" onclick="setCategory('shape-standees')" class="dropdown-link"><span class="dropdown-icon">🦷</span> Industry Shaped Standees</a></li>
+                <li>
+                  <a href="#shop" onclick="setCategory('premium-stands')" class="dropdown-link">
+                    <span class="dropdown-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                    </span>
+                    Premium 3D Acrylic Stands
+                  </a>
+                </li>
+                <li>
+                  <a href="#shop" onclick="setCategory('simple-stands')" class="dropdown-link">
+                    <span class="dropdown-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                    </span>
+                    Simple &amp; Payment Stands
+                  </a>
+                </li>
+                <li>
+                  <a href="#shop" onclick="setCategory('nfc-cards')" class="dropdown-link">
+                    <span class="dropdown-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                    </span>
+                    Smart NFC Review Cards
+                  </a>
+                </li>
+                <li>
+                  <a href="#shop" onclick="setCategory('shape-standees')" class="dropdown-link">
+                    <span class="dropdown-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M8.3 10a.7.7 0 0 1-.626-.379L5.343 5.4a.7.7 0 0 1 .616-1.022h4.682a.7.7 0 0 1 .616 1.022L8.926 9.62A.7.7 0 0 1 8.3 10Z"/><rect width="7" height="7" x="14" y="3" rx="1"/><circle cx="8" cy="17" r="4"/><path d="m14 14 3.5 6 3.5-6Z"/></svg>
+                    </span>
+                    Industry Shaped Standees
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="nav-item"><a href="#how-it-works" class="nav-link">How It Works</a></li>
-            <li class="nav-item"><a href="#reviews" class="nav-link">Reviews ★ 4.9</a></li>
+            <li class="nav-item">
+              <a href="#reviews" class="nav-link">
+                Reviews
+                <span class="nav-rating-badge">
+                  <svg viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" class="ui-icon nav-star" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></polygon></svg>
+                  4.9
+                </span>
+              </a>
+            </li>
             <li class="nav-item"><a href="#faqs" class="nav-link">FAQs</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
@@ -78,74 +129,116 @@
       <!-- Header Actions -->
       <div class="header-actions">
         <!-- Live Search Button -->
-        <button class="action-btn" onclick="openSearch()" title="Search Stands" aria-label="Search">
-          🔍
+        <button class="action-btn" onclick="openSearch()" title="Search Stands" aria-label="Search products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </button>
 
         <!-- Wishlist Indicator -->
-        <button class="action-btn" onclick="window.location.hash='#shop'" title="Wishlist" aria-label="Wishlist">
-          ♡
-          <span class="badge-count" id="wishlistCount">0</span>
+        <button class="action-btn" onclick="window.location.hash='#shop'" title="View Wishlist" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="badge-count" id="wishlistCount" aria-label="0 items in wishlist">0</span>
         </button>
 
         <!-- Header Cart Trigger -->
-        <button class="header-cart-btn" onclick="openCartDrawer()" title="View Cart">
-          🛒 <span id="headerCartCount">0</span>
+        <button class="header-cart-btn" onclick="openCartDrawer()" title="View Cart" aria-label="Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-btn-counter" id="headerCartCount">0</span>
           <span class="cart-total-price" id="headerCartPrice">Rs. 0</span>
         </button>
 
         <!-- WhatsApp Quick Chat Button -->
-        <button class="header-wa-btn" onclick="orderOnWhatsApp()" title="Direct WhatsApp Inquiries">
-          💬 WhatsApp
+        <button class="header-wa-btn" onclick="orderOnWhatsApp()" title="Direct WhatsApp Orders (+92 321 3010900)">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ui-icon ui-icon-whatsapp" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.177 8.177 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m-3.53 3.47c-.2 0-.42.01-.6.08-.23.08-.6.31-.73.65-.21.53-.78 1.94-.78 3.51 0 1.83 1.34 3.6 1.53 3.86.19.26 2.6 4.14 6.42 5.62 3.2 1.24 3.85.99 4.54.93.69-.06 2.23-.91 2.54-1.79.31-.88.31-1.63.22-1.79-.09-.16-.35-.26-.73-.45-.38-.19-2.23-1.1-2.58-1.23-.34-.12-.6-.19-.85.19-.26.38-.99 1.23-1.21 1.48-.23.26-.45.28-.83.1-.38-.19-1.61-.59-3.07-1.89-1.13-1.01-1.9-2.26-2.12-2.64-.23-.38-.02-.59.17-.78.17-.17.38-.45.57-.67.19-.23.26-.38.38-.64.13-.26.06-.48-.03-.67-.09-.19-.83-2-.1.14-.38-.34-.78-.71-.78z"/></svg>
+          Order on WhatsApp
         </button>
 
         <!-- Mobile Menu Toggle -->
-        <button class="mobile-toggle" onclick="toggleMobileNav()" title="Open Navigation Menu">
-          ☰
+        <button class="mobile-toggle" onclick="toggleMobileNav()" title="Open Navigation Menu" aria-label="Toggle Navigation Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
       </div>
     </div>
   </header>
 
   <!-- Mobile Navigation Drawer -->
-  <div id="mobileNavDrawer" class="cart-drawer-overlay" onclick="if(event.target === this) toggleMobileNav();">
-    <div class="cart-drawer" style="left:0; right:auto; transform: translateX(-100%);">
+  <div id="mobileNavDrawer" class="cart-drawer-overlay" onclick="if(event.target === this) toggleMobileNav();" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="cart-drawer mobile-nav-panel">
       <div class="cart-drawer-header">
-        <div style="display:flex; align-items:center; gap:0.6rem;">
-          <img src="logo.png" alt="TapUp Logo" style="height:32px; width:auto; object-fit:contain;" />
-          <h3 style="margin:0; font-size:1.2rem; font-weight:800; color:var(--primary);">TapUp<span style="color:var(--brand-blue);">.pk</span></h3>
+        <div class="mobile-nav-brand">
+          <img src="logo.png" alt="TapUp Logo" class="mobile-nav-logo" />
+          <h3 class="mobile-nav-title">TapUp<span>.pk</span></h3>
         </div>
-        <button class="close-drawer-btn" onclick="toggleMobileNav()">✕</button>
-      </div>
-      <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-        <a href="#home" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">Home</a>
-        <a href="#shop" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">Shop All Stands</a>
-        <a href="#shop" onclick="toggleMobileNav(); setCategory('premium-stands');" style="font-size: 0.95rem; color: var(--text-secondary); padding-left: 1rem;">• Premium 3D Stands</a>
-        <a href="#shop" onclick="toggleMobileNav(); setCategory('simple-stands');" style="font-size: 0.95rem; color: var(--text-secondary); padding-left: 1rem;">• Simple &amp; Payment Stands</a>
-        <a href="#shop" onclick="toggleMobileNav(); setCategory('nfc-cards');" style="font-size: 0.95rem; color: var(--text-secondary); padding-left: 1rem;">• NFC Smart Cards</a>
-        <a href="#shop" onclick="toggleMobileNav(); setCategory('shape-standees');" style="font-size: 0.95rem; color: var(--text-secondary); padding-left: 1rem;">• Shape Standees (Dental/Burger)</a>
-        <a href="#how-it-works" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">How It Works</a>
-        <a href="#reviews" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">Customer Reviews</a>
-        <a href="#faqs" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">FAQs</a>
-        <a href="#contact" onclick="toggleMobileNav()" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">Contact Us</a>
-        <hr style="border:none; border-top:1px solid var(--border-light); margin: 0.5rem 0;" />
-        <button class="btn-whatsapp" onclick="toggleMobileNav(); orderOnWhatsApp();">
-          💬 Order on WhatsApp (+92 327 7008585)
+        <button class="close-drawer-btn" onclick="toggleMobileNav()" aria-label="Close navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
+      </div>
+      <div class="mobile-nav-links-wrap">
+        <a href="#home" onclick="toggleMobileNav()" class="mobile-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Home
+        </a>
+        <a href="#shop" onclick="toggleMobileNav()" class="mobile-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Shop All Stands
+        </a>
+        <div class="mobile-sublinks-group">
+          <span class="mobile-group-title">Collections</span>
+          <a href="#shop" onclick="toggleMobileNav(); setCategory('premium-stands');" class="mobile-sublink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            Premium 3D Acrylic Stands
+          </a>
+          <a href="#shop" onclick="toggleMobileNav(); setCategory('simple-stands');" class="mobile-sublink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+            Simple &amp; Payment Stands
+          </a>
+          <a href="#shop" onclick="toggleMobileNav(); setCategory('nfc-cards');" class="mobile-sublink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            Smart NFC Review Cards
+          </a>
+          <a href="#shop" onclick="toggleMobileNav(); setCategory('shape-standees');" class="mobile-sublink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M8.3 10a.7.7 0 0 1-.626-.379L5.343 5.4a.7.7 0 0 1 .616-1.022h4.682a.7.7 0 0 1 .616 1.022L8.926 9.62A.7.7 0 0 1 8.3 10Z"/><rect width="7" height="7" x="14" y="3" rx="1"/><circle cx="8" cy="17" r="4"/><path d="m14 14 3.5 6 3.5-6Z"/></svg>
+            Shaped Silhouette Standees
+          </a>
+        </div>
+        <a href="#how-it-works" onclick="toggleMobileNav()" class="mobile-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          How It Works
+        </a>
+        <a href="#reviews" onclick="toggleMobileNav()" class="mobile-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Customer Reviews
+        </a>
+        <a href="#faqs" onclick="toggleMobileNav()" class="mobile-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>
+          FAQs
+        </a>
+        <a href="#contact" onclick="toggleMobileNav()" class="mobile-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Contact Us
+        </a>
+        
+        <div class="mobile-nav-footer">
+          <button class="btn-whatsapp mobile-wa-btn" onclick="toggleMobileNav(); orderOnWhatsApp();">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="ui-icon ui-icon-whatsapp" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.177 8.177 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m-3.53 3.47c-.2 0-.42.01-.6.08-.23.08-.6.31-.73.65-.21.53-.78 1.94-.78 3.51 0 1.83 1.34 3.6 1.53 3.86.19.26 2.6 4.14 6.42 5.62 3.2 1.24 3.85.99 4.54.93.69-.06 2.23-.91 2.54-1.79.31-.88.31-1.63.22-1.79-.09-.16-.35-.26-.73-.45-.38-.19-2.23-1.1-2.58-1.23-.34-.12-.6-.19-.85.19-.26.38-.99 1.23-1.21 1.48-.23.26-.45.28-.83.1-.38-.19-1.61-.59-3.07-1.89-1.13-1.01-1.9-2.26-2.12-2.64-.23-.38-.02-.59.17-.78.17-.17.38-.45.57-.67.19-.23.26-.38.38-.64.13-.26.06-.48-.03-.67-.09-.19-.83-2-.1.14-.38-.34-.78-.71-.78z"/></svg>
+            Order on WhatsApp (+92 321 3010900)
+          </button>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Live Search Overlay Modal -->
-  <div class="search-modal" id="searchModal" onclick="if(event.target === this) closeSearch();">
+  <div class="search-modal" id="searchModal" onclick="if(event.target === this) closeSearch();" role="dialog" aria-modal="true" aria-label="Search Products">
     <div class="search-box">
       <div class="search-input-wrapper">
-        <span>🔍</span>
-        <input type="text" id="searchInput" class="search-input" placeholder="Search smart stands, Google review cards, acrylic..." oninput="handleSearchInput(this.value)" />
-        <button onclick="closeSearch()" style="font-size: 1.25rem; color: var(--text-muted);">✕</button>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon search-input-icon" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search smart stands, Google review cards, acrylic..." oninput="handleSearchInput(this.value)" aria-label="Search input" />
+        <button onclick="closeSearch()" class="search-close-btn" aria-label="Close search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
       </div>
-      <div class="search-results" id="searchResults">
-        <p style="color:var(--text-muted); text-align:center; padding:1.5rem;">Start typing to search products...</p>
+      <div class="search-results" id="searchResults" role="region" aria-live="polite">
+        <p class="search-placeholder-msg">Start typing to search products...</p>
       </div>
     </div>
   </div>
@@ -157,7 +250,7 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="hero-pill">
-            <span class="dot"></span>
+            <span class="dot" aria-hidden="true"></span>
             <span>Pakistan’s #1 Smart NFC &amp; QR Stand Solution</span>
           </div>
           <h1 class="hero-title">
@@ -168,21 +261,36 @@
           </p>
 
           <div class="hero-badges-row">
-            <div class="hero-bullet"><span class="check">✓</span> Works with All iPhones &amp; Androids</div>
-            <div class="hero-bullet"><span class="check">✓</span> Zero Monthly Fees (Lifetime Access)</div>
-            <div class="hero-bullet"><span class="check">✓</span> Custom Branded with Your Logo</div>
-            <div class="hero-bullet"><span class="check">✓</span> Cash on Delivery Across Pakistan</div>
+            <div class="hero-bullet">
+              <span class="bullet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="ui-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Works with All iPhones &amp; Androids
+            </div>
+            <div class="hero-bullet">
+              <span class="bullet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="ui-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Zero Monthly Fees (Lifetime Access)
+            </div>
+            <div class="hero-bullet">
+              <span class="bullet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="ui-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Custom Branded with Your Logo
+            </div>
+            <div class="hero-bullet">
+              <span class="bullet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="ui-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Cash on Delivery Across Pakistan
+            </div>
           </div>
 
           <div class="hero-cta-group">
             <a href="#shop" class="btn-primary">
-              🛒 Shop Best Sellers
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Shop Best Sellers
             </a>
             <button class="btn-whatsapp" onclick="orderOnWhatsApp()">
-              💬 Order on WhatsApp
+              <svg viewBox="0 0 24 24" fill="currentColor" class="ui-icon ui-icon-whatsapp" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.177 8.177 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m-3.53 3.47c-.2 0-.42.01-.6.08-.23.08-.6.31-.73.65-.21.53-.78 1.94-.78 3.51 0 1.83 1.34 3.6 1.53 3.86.19.26 2.6 4.14 6.42 5.62 3.2 1.24 3.85.99 4.54.93.69-.06 2.23-.91 2.54-1.79.31-.88.31-1.63.22-1.79-.09-.16-.35-.26-.73-.45-.38-.19-2.23-1.1-2.58-1.23-.34-.12-.6-.19-.85.19-.26.38-.99 1.23-1.21 1.48-.23.26-.45.28-.83.1-.38-.19-1.61-.59-3.07-1.89-1.13-1.01-1.9-2.26-2.12-2.64-.23-.38-.02-.59.17-.78.17-.17.38-.45.57-.67.19-.23.26-.38.38-.64.13-.26.06-.48-.03-.67-.09-.19-.83-2-.1.14-.38-.34-.78-.71-.78z"/></svg>
+              Order on WhatsApp
             </button>
             <button class="btn-secondary" onclick="triggerNfcDemo()">
-              ⚡ Try NFC Simulator
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Try NFC Simulator
             </button>
           </div>
         </div>
@@ -191,10 +299,14 @@
         <div class="hero-visual-card">
           <img src="https://www.tapscan.pk/cdn/shop/files/Smart-NFC-Google-Review-QR-Code-Standee-Premium-edition-TapScan-pk-28331491983448.jpg?v=1763768626&width=800" alt="Smart NFC Google Review Standee" class="hero-main-img" />
           <div class="interactive-sim-box">
-            <div class="sim-headline">✨ Interactive Experience</div>
+            <div class="sim-headline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              Interactive Experience
+            </div>
             <div class="sim-sub">Curious how customers review your business in 2 seconds?</div>
             <button class="tap-demo-trigger" onclick="triggerNfcDemo()">
-              📲 Tap Virtual Phone on Standee
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+              Tap Virtual Phone on Standee
             </button>
           </div>
         </div>
@@ -202,31 +314,39 @@
     </section>
 
     <!-- Trust Badges (The 4 Pillars) -->
-    <section class="features-section">
+    <section class="features-section" aria-label="Key Benefits">
       <div class="container features-grid">
         <div class="feature-box">
-          <div class="feature-icon-wrap">🎨</div>
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon feature-icon" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+          </div>
           <div class="feature-content">
             <h4>Fully Customizable</h4>
             <p>Your business logo, colors, and links — precision printed on acrylic.</p>
           </div>
         </div>
         <div class="feature-box">
-          <div class="feature-icon-wrap">🚚</div>
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon feature-icon" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
+          </div>
           <div class="feature-content">
             <h4>Fast Delivery</h4>
             <p>Seamless Cash on Delivery shipping to Lahore, Karachi, Islamabad &amp; all cities.</p>
           </div>
         </div>
         <div class="feature-box">
-          <div class="feature-icon-wrap">⭐</div>
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon feature-icon" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+          </div>
           <div class="feature-content">
             <h4>3,000+ Happy Clients</h4>
             <p>Trusted by Pakistan's top cafés, salons, dental clinics, and retail stores.</p>
           </div>
         </div>
         <div class="feature-box">
-          <div class="feature-icon-wrap">🛡️</div>
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon feature-icon" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
           <div class="feature-content">
             <h4>Lifetime Durability</h4>
             <p>Laser cut acrylic &amp; UV printing. Scratch-resistant, no monthly fees.</p>
@@ -246,7 +366,7 @@
 
         <div class="collections-grid">
           <!-- Collection 1 -->
-          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('premium-stands');">
+          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('premium-stands');" role="button" tabindex="0">
             <div class="collection-img-wrap">
               <img src="https://www.tapscan.pk/cdn/shop/files/Smart-NFC-4-in-1-Qr-code-Standee-With-3D-Cut-Acrylic-Icons-TapScan-pk-28331614732376.jpg?v=1763768618&width=800" alt="Premium 3D Stands" loading="lazy" />
               <span class="collection-badge">Best Seller</span>
@@ -254,25 +374,31 @@
             <div class="collection-info">
               <h3>Premium Stands</h3>
               <p>Dual NFC &amp; QR technology with 3D laser-cut acrylic icons in gold &amp; black themes.</p>
-              <span class="collection-link">Explore Stands →</span>
+              <span class="collection-link">
+                Explore Stands
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
             </div>
           </div>
 
           <!-- Collection 2 -->
-          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('simple-stands');">
+          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('simple-stands');" role="button" tabindex="0">
             <div class="collection-img-wrap">
-              <img src="https://www.tapscan.pk/cdn/shop/files/EasyPaisa-Qr-Code-Standee-TapScan-pk-28324882776152.jpg?v=1763768620&width=800" alt="Simple & Payment Stands" loading="lazy" />
+              <img src="https://www.tapscan.pk/cdn/shop/files/EasyPaisa-Qr-Code-Standee-TapScan-pk-28324882776152.jpg?v=1763768620&width=800" alt="Simple &amp; Payment Stands" loading="lazy" />
               <span class="collection-badge">Popular</span>
             </div>
             <div class="collection-info">
               <h3>Simple &amp; Payment Stands</h3>
               <p>Clean, compact tabletop stands for EasyPaisa, JazzCash, Raast, or single review links.</p>
-              <span class="collection-link">Explore Stands →</span>
+              <span class="collection-link">
+                Explore Stands
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
             </div>
           </div>
 
           <!-- Collection 3 -->
-          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('nfc-cards');">
+          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('nfc-cards');" role="button" tabindex="0">
             <div class="collection-img-wrap">
               <img src="https://www.tapscan.pk/cdn/shop/files/Smart-Google-Review-Card-QR-NFC-Review-Card-for-Fast-Reviews-TapScan-pk-28912768483416.jpg?v=1778614099&width=800" alt="NFC Smart Review Cards" loading="lazy" />
               <span class="collection-badge">Pocket Size</span>
@@ -280,12 +406,15 @@
             <div class="collection-info">
               <h3>Smart NFC Review Cards</h3>
               <p>Wallet-sized NFC + QR cards for influencers, field agents, doctors, and on-the-go reviews.</p>
-              <span class="collection-link">Explore Cards →</span>
+              <span class="collection-link">
+                Explore Cards
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
             </div>
           </div>
 
           <!-- Collection 4 -->
-          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('shape-standees');">
+          <div class="collection-card" onclick="window.location.hash='#shop'; setCategory('shape-standees');" role="button" tabindex="0">
             <div class="collection-img-wrap">
               <img src="https://www.tapscan.pk/cdn/shop/files/Dental-Tooth-Shaped-Smart-NFC-2-in-1-Standee-For-Dentists-TapScan-pk-34403050061912.webp?v=1778614088&width=800" alt="Custom Shaped Stands" loading="lazy" />
               <span class="collection-badge">Custom Cut</span>
@@ -293,7 +422,10 @@
             <div class="collection-info">
               <h3>Industry Shape Standees</h3>
               <p>Specialty silhouettes: Tooth shapes for dentists, Burger shapes for eateries, and custom logos.</p>
-              <span class="collection-link">Explore Shapes →</span>
+              <span class="collection-link">
+                Explore Shapes
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
             </div>
           </div>
         </div>
@@ -310,17 +442,17 @@
         </div>
 
         <div class="catalog-controls">
-          <div class="filter-pills">
-            <button class="filter-pill active" data-category="all" onclick="setCategory('all')">All Stands</button>
-            <button class="filter-pill" data-category="premium-stands" onclick="setCategory('premium-stands')">Premium 3D Stands</button>
-            <button class="filter-pill" data-category="simple-stands" onclick="setCategory('simple-stands')">Simple &amp; Payment</button>
-            <button class="filter-pill" data-category="nfc-cards" onclick="setCategory('nfc-cards')">Smart NFC Cards</button>
-            <button class="filter-pill" data-category="shape-standees" onclick="setCategory('shape-standees')">Shaped Cutouts</button>
+          <div class="filter-pills" role="tablist" aria-label="Product categories">
+            <button class="filter-pill active" data-category="all" onclick="setCategory('all')" role="tab" aria-selected="true">All Stands</button>
+            <button class="filter-pill" data-category="premium-stands" onclick="setCategory('premium-stands')" role="tab" aria-selected="false">Premium 3D Stands</button>
+            <button class="filter-pill" data-category="simple-stands" onclick="setCategory('simple-stands')" role="tab" aria-selected="false">Simple &amp; Payment</button>
+            <button class="filter-pill" data-category="nfc-cards" onclick="setCategory('nfc-cards')" role="tab" aria-selected="false">Smart NFC Cards</button>
+            <button class="filter-pill" data-category="shape-standees" onclick="setCategory('shape-standees')" role="tab" aria-selected="false">Shaped Cutouts</button>
           </div>
 
           <div class="sort-select-wrapper">
-            <span>Sort by:</span>
-            <select class="sort-select" onchange="handleSortChange(this.value)">
+            <label for="homeSortSelect" class="sort-label">Sort by:</label>
+            <select id="homeSortSelect" class="sort-select" onchange="handleSortChange(this.value)">
               <option value="featured">Featured / Best Selling</option>
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
@@ -334,9 +466,10 @@
           <!-- Filled dynamically via app.js -->
         </div>
 
-        <div style="text-align: center; margin-top: 3rem;">
+        <div class="catalog-view-all-box">
           <a href="#shop" class="btn-primary" style="padding: 1rem 2.5rem;">
-            View All 30+ Stand Models →
+            View All 30+ Stand Models
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
       </div>
@@ -354,21 +487,27 @@
 
           <div class="story-points">
             <div class="story-point">
-              <div class="story-point-icon">⚡</div>
+              <div class="story-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
               <div>
                 <h4>Plug-and-Play Convenience</h4>
                 <p>We handle personalization and nationwide delivery. Just share your links and logo, and your stand arrives ready to place on your counter.</p>
               </div>
             </div>
             <div class="story-point">
-              <div class="story-point-icon">🏬</div>
+              <div class="story-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+              </div>
               <div>
                 <h4>Perfect for All Businesses</h4>
                 <p>Ideal for reception counters, cafés, aesthetic salons, dental clinics, boutiques, gyms, and retail showrooms across Pakistan.</p>
               </div>
             </div>
             <div class="story-point">
-              <div class="story-point-icon">🇵🇰</div>
+              <div class="story-point-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
+              </div>
               <div>
                 <h4>Nationwide Delivery &amp; COD</h4>
                 <p>Reliable door-to-door delivery with Cash on Delivery option in Lahore, Karachi, Islamabad, Rawalpindi, Peshawar, and 150+ cities.</p>
@@ -377,7 +516,8 @@
           </div>
 
           <button class="btn-whatsapp" onclick="orderOnWhatsApp()">
-            💬 Discuss Custom Design with TapScan Lahore
+            <svg viewBox="0 0 24 24" fill="currentColor" class="ui-icon ui-icon-whatsapp" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.177 8.177 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m-3.53 3.47c-.2 0-.42.01-.6.08-.23.08-.6.31-.73.65-.21.53-.78 1.94-.78 3.51 0 1.83 1.34 3.6 1.53 3.86.19.26 2.6 4.14 6.42 5.62 3.2 1.24 3.85.99 4.54.93.69-.06 2.23-.91 2.54-1.79.31-.88.31-1.63.22-1.79-.09-.16-.35-.26-.73-.45-.38-.19-2.23-1.1-2.58-1.23-.34-.12-.6-.19-.85.19-.26.38-.99 1.23-1.21 1.48-.23.26-.45.28-.83.1-.38-.19-1.61-.59-3.07-1.89-1.13-1.01-1.9-2.26-2.12-2.64-.23-.38-.02-.59.17-.78.17-.17.38-.45.57-.67.19-.23.26-.38.38-.64.13-.26.06-.48-.03-.67-.09-.19-.83-2-.1.14-.38-.34-.78-.71-.78z"/></svg>
+            Discuss Custom Design with TapScan Lahore
           </button>
         </div>
 
@@ -392,11 +532,11 @@
     </section>
 
     <!-- Brands That Believe in Us -->
-    <section class="brands-section">
+    <section class="brands-section" aria-label="Client Brands">
       <div class="container">
         <div class="brands-header">
           <h3>Brands That Believe in Us</h3>
-          <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.35rem;">Powering customer engagement for leading enterprises and franchises across Pakistan</p>
+          <p class="brands-sub">Powering customer engagement for leading enterprises and franchises across Pakistan</p>
         </div>
         <div class="brands-grid" id="brandsGrid">
           <!-- Injected via app.js -->
@@ -432,32 +572,35 @@
           <!-- Injected via app.js -->
         </div>
 
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="#faqs" class="btn-secondary">View All 25+ Questions &amp; Answers →</a>
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="#faqs" class="btn-secondary">
+            View All 25+ Questions &amp; Answers
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- VIEW: FULL SHOP / CATALOG (#shop) -->
-  <section id="viewShop" class="page-view">
+  <section id="viewShop" class="page-view" aria-label="Catalog View">
     <div class="page-header-banner">
       <h1>All Smart Stands &amp; NFC Cards</h1>
       <p>Browse Pakistan's largest collection of smart NFC &amp; QR tabletop standees for Google reviews, social follows, and payments.</p>
     </div>
     <div class="container">
       <div class="catalog-controls">
-        <div class="filter-pills">
-          <button class="filter-pill active" data-category="all" onclick="setCategory('all')">All (30)</button>
-          <button class="filter-pill" data-category="premium-stands" onclick="setCategory('premium-stands')">Premium 3D Stands</button>
-          <button class="filter-pill" data-category="simple-stands" onclick="setCategory('simple-stands')">Simple &amp; Payment</button>
-          <button class="filter-pill" data-category="nfc-cards" onclick="setCategory('nfc-cards')">Smart NFC Cards</button>
-          <button class="filter-pill" data-category="shape-standees" onclick="setCategory('shape-standees')">Shaped Cutouts</button>
+        <div class="filter-pills" role="tablist" aria-label="Catalog categories">
+          <button class="filter-pill active" data-category="all" onclick="setCategory('all')" role="tab" aria-selected="true">All (30)</button>
+          <button class="filter-pill" data-category="premium-stands" onclick="setCategory('premium-stands')" role="tab" aria-selected="false">Premium 3D Stands</button>
+          <button class="filter-pill" data-category="simple-stands" onclick="setCategory('simple-stands')" role="tab" aria-selected="false">Simple &amp; Payment</button>
+          <button class="filter-pill" data-category="nfc-cards" onclick="setCategory('nfc-cards')" role="tab" aria-selected="false">Smart NFC Cards</button>
+          <button class="filter-pill" data-category="shape-standees" onclick="setCategory('shape-standees')" role="tab" aria-selected="false">Shaped Cutouts</button>
         </div>
 
         <div class="sort-select-wrapper">
           <span id="catalogProductCount">30 Products</span>
-          <select class="sort-select" onchange="handleSortChange(this.value)">
+          <select class="sort-select" onchange="handleSortChange(this.value)" aria-label="Sort products">
             <option value="featured">Featured / Best Selling</option>
             <option value="price-low">Price: Low to High</option>
             <option value="price-high">Price: High to Low</option>
@@ -471,15 +614,15 @@
   </section>
 
   <!-- VIEW: PRODUCT DETAIL (#product/:id) -->
-  <section id="viewProductDetail" class="page-view">
+  <section id="viewProductDetail" class="page-view" aria-label="Product Detail View">
     <div id="productDetailContainer"></div>
   </section>
 
   <!-- VIEW: REVIEWS (#reviews) -->
-  <section id="viewReviews" class="page-view">
+  <section id="viewReviews" class="page-view" aria-label="Customer Reviews View">
     <div class="page-header-banner">
       <h1>Customer Reviews &amp; Testimonials</h1>
-      <p>★ 4.93 / 5 Average Rating from 3,000+ businesses across Pakistan.</p>
+      <p>Average 4.93 / 5 Rating from 3,000+ verified businesses across Pakistan.</p>
     </div>
     <div class="container">
       <div class="testimonials-grid" style="margin-bottom: 3.5rem;">
@@ -489,7 +632,7 @@
   </section>
 
   <!-- VIEW: HOW IT WORKS (#how-it-works) -->
-  <section id="viewHowItWorks" class="page-view">
+  <section id="viewHowItWorks" class="page-view" aria-label="How It Works View">
     <div class="page-header-banner">
       <h1>How It Works – TapScan QR Solutions</h1>
       <p>At TapScan, we make it simple for businesses in Pakistan to bridge offline customers with their online presence.</p>
@@ -498,31 +641,25 @@
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-number">1</div>
-          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading);">Select &amp; Customize</h3>
-          <p style="color: var(--text-secondary); font-size: 0.875rem;">
-            Choose your stand design (Google Review, 4-in-1, or Cutout). Send us your high-resolution business logo, brand colors, and destination links.
-          </p>
+          <h3>Select &amp; Customize</h3>
+          <p>Choose your stand design (Google Review, 4-in-1, or Cutout). Send us your high-resolution business logo, brand colors, and destination links.</p>
         </div>
         <div class="step-card">
           <div class="step-number">2</div>
-          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading);">We Program &amp; Laser-Cut</h3>
-          <p style="color: var(--text-secondary); font-size: 0.875rem;">
-            Our technical team encodes the embedded NTAG213/215 NFC chip with your encrypted URL, generates high-contrast QR codes, and laser crafts the acrylic.
-          </p>
+          <h3>We Program &amp; Laser-Cut</h3>
+          <p>Our technical team encodes the embedded NTAG213/215 NFC chip with your encrypted URL, generates high-contrast QR codes, and laser crafts the acrylic.</p>
         </div>
         <div class="step-card">
           <div class="step-number">3</div>
-          <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading);">Plug &amp; Play Counter Launch</h3>
-          <p style="color: var(--text-secondary); font-size: 0.875rem;">
-            Your stand arrives ready to use via Express Courier. Place it at your cashier counter or reception desk. Customers simply tap and review!
-          </p>
+          <h3>Plug &amp; Play Counter Launch</h3>
+          <p>Your stand arrives ready to use via Express Courier. Place it at your cashier counter or reception desk. Customers simply tap and review!</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- VIEW: ABOUT US (#about) -->
-  <section id="viewAbout" class="page-view">
+  <section id="viewAbout" class="page-view" aria-label="About Us View">
     <div class="page-header-banner">
       <h1>About TapScan PK</h1>
       <p>Pakistan's pioneer in smart point-of-sale customer engagement technology.</p>
@@ -538,7 +675,7 @@
   </section>
 
   <!-- VIEW: FAQS (#faqs) -->
-  <section id="viewFaqs" class="page-view">
+  <section id="viewFaqs" class="page-view" aria-label="Frequently Asked Questions View">
     <div class="page-header-banner">
       <h1>Frequently Asked Questions</h1>
       <p>Explore our complete knowledge base covering NFC compatibility, customization, and delivery.</p>
@@ -549,7 +686,7 @@
   </section>
 
   <!-- VIEW: CONTACT US (#contact) -->
-  <section id="viewContact" class="page-view">
+  <section id="viewContact" class="page-view" aria-label="Contact Us View">
     <div class="page-header-banner">
       <h1>Contact TapScan PK</h1>
       <p>Have questions about bulk orders, corporate branding, or custom shapes? We are here to help!</p>
@@ -560,28 +697,36 @@
           <h2>Get In Touch</h2>
           <div class="contact-info-list">
             <div class="contact-item">
-              <div class="contact-icon">📍</div>
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
               <div>
                 <strong>Head Office &amp; Workshop</strong>
                 <p>B3 Second floor, 28 Band Road, Lahore 54000, Pakistan</p>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">📞</div>
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
               <div>
                 <strong>Customer Support Phone</strong>
-                <p><a href="tel:+923277008585">+92 327 7008585</a> / <a href="tel:+923257114725">+92 325 7114725</a></p>
+                <p><a href="tel:+923213010900">+92 321 3010900</a> / <a href="tel:+923257114725">+92 325 7114725</a></p>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">💬</div>
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="ui-icon ui-icon-whatsapp" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.177 8.177 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m-3.53 3.47c-.2 0-.42.01-.6.08-.23.08-.6.31-.73.65-.21.53-.78 1.94-.78 3.51 0 1.83 1.34 3.6 1.53 3.86.19.26 2.6 4.14 6.42 5.62 3.2 1.24 3.85.99 4.54.93.69-.06 2.23-.91 2.54-1.79.31-.88.31-1.63.22-1.79-.09-.16-.35-.26-.73-.45-.38-.19-2.23-1.1-2.58-1.23-.34-.12-.6-.19-.85.19-.26.38-.99 1.23-1.21 1.48-.23.26-.45.28-.83.1-.38-.19-1.61-.59-3.07-1.89-1.13-1.01-1.9-2.26-2.12-2.64-.23-.38-.02-.59.17-.78.17-.17.38-.45.57-.67.19-.23.26-.38.38-.64.13-.26.06-.48-.03-.67-.09-.19-.83-2-.1.14-.38-.34-.78-.71-.78z"/></svg>
+              </div>
               <div>
                 <strong>Instant WhatsApp Chat</strong>
-                <p><a href="https://wa.me/923277008585" target="_blank" style="color:var(--whatsapp); font-weight:700;">+92 327 7008585 (Chat Now)</a></p>
+                <p><a href="https://wa.me/923213010900" target="_blank" style="color:var(--whatsapp); font-weight:700;">+92 321 3010900 (Chat Now)</a></p>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">✉️</div>
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
               <div>
                 <strong>Official Email</strong>
                 <p><a href="mailto:info@tapscan.pk">info@tapscan.pk</a></p>
@@ -595,16 +740,16 @@
           <form onsubmit="event.preventDefault(); showToast('Message sent! Our Lahore team will reply shortly.'); this.reset();">
             <div style="display:flex; flex-direction:column; gap:1rem;">
               <div>
-                <label class="form-label">Your Name</label>
-                <input type="text" class="form-input" required placeholder="Ali Khan" />
+                <label for="contactName" class="form-label">Your Name</label>
+                <input type="text" id="contactName" class="form-input" required placeholder="Ali Khan" />
               </div>
               <div>
-                <label class="form-label">Phone / WhatsApp</label>
-                <input type="tel" class="form-input" required placeholder="0300-1234567" />
+                <label for="contactPhone" class="form-label">Phone / WhatsApp</label>
+                <input type="tel" id="contactPhone" class="form-input" required placeholder="0300-1234567" />
               </div>
               <div>
-                <label class="form-label">Message / Inquiry</label>
-                <textarea class="form-textarea" rows="4" required placeholder="Tell us about your business and how many stands you need..."></textarea>
+                <label for="contactMsg" class="form-label">Message / Inquiry</label>
+                <textarea id="contactMsg" class="form-textarea" rows="4" required placeholder="Tell us about your business and how many stands you need..."></textarea>
               </div>
               <button type="submit" class="btn-primary" style="width:100%;">Send Inquiry</button>
             </div>
@@ -615,16 +760,21 @@
   </section>
 
   <!-- VIEW: STORE POLICIES (#policy/:type) -->
-  <section id="viewPolicy" class="page-view">
+  <section id="viewPolicy" class="page-view" aria-label="Policy View">
     <div id="policyContentContainer"></div>
   </section>
 
   <!-- Shopping Cart Slide-in Drawer -->
-  <div class="cart-drawer-overlay" id="cartDrawerOverlay" onclick="if(event.target === this) closeCartDrawer();">
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay" onclick="if(event.target === this) closeCartDrawer();" role="dialog" aria-modal="true" aria-label="Shopping Cart">
     <div class="cart-drawer">
       <div class="cart-drawer-header">
-        <h3>🛒 Your Cart (<span id="drawerCartCount">0</span>)</h3>
-        <button class="close-drawer-btn" onclick="closeCartDrawer()" title="Close Cart">✕</button>
+        <h3 class="drawer-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Your Cart (<span id="drawerCartCount">0</span>)
+        </h3>
+        <button class="close-drawer-btn" onclick="closeCartDrawer()" title="Close Cart" aria-label="Close cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
       </div>
 
       <!-- Free Delivery Progress Meter -->
@@ -645,7 +795,7 @@
       <!-- Cart Drawer Footer -->
       <div class="cart-drawer-footer">
         <div class="cart-coupon-row">
-          <input type="text" id="couponCodeInput" class="coupon-input" placeholder="Promo Code (TAPSCAN10)" />
+          <input type="text" id="couponCodeInput" class="coupon-input" placeholder="Promo Code (TAPSCAN10)" aria-label="Promo code input" />
           <button class="coupon-btn" onclick="applyCoupon()">Apply</button>
         </div>
 
@@ -656,10 +806,12 @@
 
         <div class="cart-action-btns">
           <button class="btn-checkout" onclick="openCheckout()">
-            🚀 Proceed to Checkout (COD)
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="m16 16 2 2 4-4"/><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-.99"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" x2="12" y1="22" y2="12"/></svg>
+            Proceed to Checkout (COD)
           </button>
           <button class="btn-wa-checkout" onclick="orderOnWhatsApp()">
-            💬 Order Directly on WhatsApp
+            <svg viewBox="0 0 24 24" fill="currentColor" class="ui-icon ui-icon-whatsapp" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.177 8.177 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m-3.53 3.47c-.2 0-.42.01-.6.08-.23.08-.6.31-.73.65-.21.53-.78 1.94-.78 3.51 0 1.83 1.34 3.6 1.53 3.86.19.26 2.6 4.14 6.42 5.62 3.2 1.24 3.85.99 4.54.93.69-.06 2.23-.91 2.54-1.79.31-.88.31-1.63.22-1.79-.09-.16-.35-.26-.73-.45-.38-.19-2.23-1.1-2.58-1.23-.34-.12-.6-.19-.85.19-.26.38-.99 1.23-1.21 1.48-.23.26-.45.28-.83.1-.38-.19-1.61-.59-3.07-1.89-1.13-1.01-1.9-2.26-2.12-2.64-.23-.38-.02-.59.17-.78.17-.17.38-.45.57-.67.19-.23.26-.38.38-.64.13-.26.06-.48-.03-.67-.09-.19-.83-2-.1.14-.38-.34-.78-.71-.78z"/></svg>
+            Order Cart on WhatsApp
           </button>
         </div>
       </div>
@@ -667,60 +819,74 @@
   </div>
 
   <!-- Pakistan COD Checkout Modal -->
-  <div class="checkout-modal-overlay" id="checkoutModalOverlay" onclick="if(event.target === this) closeCheckout();">
+  <div class="checkout-modal-overlay" id="checkoutModalOverlay" onclick="if(event.target === this) closeCheckout();" role="dialog" aria-modal="true" aria-label="Checkout">
     <div class="checkout-modal">
       <div class="checkout-modal-header">
-        <h3>📦 Secure Checkout (Cash on Delivery)</h3>
-        <button onclick="closeCheckout()" style="color:#ffffff; font-size:1.25rem;">✕</button>
+        <h3 class="checkout-modal-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="m16 16 2 2 4-4"/><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-.99"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" x2="12" y1="22" y2="12"/></svg>
+          Secure Checkout (Cash on Delivery)
+        </h3>
+        <button onclick="closeCheckout()" class="checkout-close-btn" aria-label="Close checkout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
       </div>
       <div class="checkout-modal-body">
         <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
           <div class="order-summary-box" id="checkoutSummaryContent"></div>
 
-          <h4 style="margin-bottom:0.85rem; font-size:1rem; color:var(--primary);">1. Contact &amp; Shipping Details</h4>
+          <h4 class="form-section-title">1. Contact &amp; Shipping Details</h4>
           <div class="form-grid">
             <div class="form-group">
-              <label class="form-label">Full Name *</label>
+              <label for="custName" class="form-label">Full Name *</label>
               <input type="text" id="custName" class="form-input" required placeholder="e.g. Dr. Hamza Qureshi" />
             </div>
             <div class="form-group">
-              <label class="form-label">WhatsApp Number *</label>
-              <input type="tel" id="custPhone" class="form-input" required placeholder="0327-7008585" />
+              <label for="custPhone" class="form-label">WhatsApp Number *</label>
+              <input type="tel" id="custPhone" class="form-input" required placeholder="0321-3010900" />
             </div>
             <div class="form-group">
-              <label class="form-label">Email Address (Optional)</label>
+              <label for="custEmail" class="form-label">Email Address (Optional)</label>
               <input type="email" id="custEmail" class="form-input" placeholder="name@business.com" />
             </div>
             <div class="form-group">
-              <label class="form-label">City *</label>
+              <label for="custCity" class="form-label">City *</label>
               <select id="custCity" class="form-select" required>
                 <!-- Populated via app.js -->
               </select>
             </div>
             <div class="form-group full-width">
-              <label class="form-label">Complete Street Address / Counter Location *</label>
+              <label for="custAddress" class="form-label">Complete Street Address / Counter Location *</label>
               <input type="text" id="custAddress" class="form-input" required placeholder="Shop #, Plaza / Street name, Area" />
             </div>
             <div class="form-group full-width">
-              <label class="form-label">Customization Notes / Links to add</label>
+              <label for="custNotes" class="form-label">Customization Notes / Links to add</label>
               <textarea id="custNotes" class="form-textarea" rows="2" placeholder="e.g. My Google review link, Instagram handle @mybusiness..."></textarea>
             </div>
           </div>
 
-          <h4 style="margin-bottom:0.5rem; font-size:1rem; color:var(--primary);">2. Select Payment Method</h4>
+          <h4 class="form-section-title" style="margin-top:1.5rem;">2. Select Payment Method</h4>
           <div class="payment-method-selector">
             <div class="payment-options">
-              <div class="payment-opt-card active" data-method="cod" onclick="selectPaymentMethod('cod')">
-                <h5>💵 Cash on Delivery</h5>
-                <span style="font-size:0.7rem; color:var(--text-muted);">Pay when rider arrives</span>
+              <div class="payment-opt-card active" data-method="cod" onclick="selectPaymentMethod('cod')" role="button" tabindex="0">
+                <h5>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+                  Cash on Delivery
+                </h5>
+                <span class="payment-opt-sub">Pay when rider arrives</span>
               </div>
-              <div class="payment-opt-card" data-method="jazzcash" onclick="selectPaymentMethod('jazzcash')">
-                <h5>📱 EasyPaisa / JazzCash</h5>
-                <span style="font-size:0.7rem; color:var(--text-muted);">Instant mobile transfer</span>
+              <div class="payment-opt-card" data-method="jazzcash" onclick="selectPaymentMethod('jazzcash')" role="button" tabindex="0">
+                <h5>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                  EasyPaisa / JazzCash
+                </h5>
+                <span class="payment-opt-sub">Instant mobile transfer</span>
               </div>
-              <div class="payment-opt-card" data-method="bank" onclick="selectPaymentMethod('bank')">
-                <h5>🏦 Bank Transfer</h5>
-                <span style="font-size:0.7rem; color:var(--text-muted);">Meezan / Alfalah IBAN</span>
+              <div class="payment-opt-card" data-method="bank" onclick="selectPaymentMethod('bank')" role="button" tabindex="0">
+                <h5>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                  Bank Transfer
+                </h5>
+                <span class="payment-opt-sub">Meezan / Alfalah IBAN</span>
               </div>
             </div>
             <div class="payment-details-box" id="paymentMethodDetails">
@@ -728,8 +894,9 @@
             </div>
           </div>
 
-          <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem;">
-            ✓ Confirm Order (Pay on Delivery)
+          <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; margin-top: 1.5rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="ui-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Confirm Order (Pay on Delivery)
           </button>
         </form>
       </div>
@@ -737,20 +904,23 @@
   </div>
 
   <!-- Quick View Modal -->
-  <div class="quick-view-overlay" id="quickViewOverlay" onclick="if(event.target === this) closeQuickView();">
+  <div class="quick-view-overlay" id="quickViewOverlay" onclick="if(event.target === this) closeQuickView();" role="dialog" aria-modal="true" aria-label="Quick View">
     <div class="quick-view-modal">
-      <button class="quick-close-btn" onclick="closeQuickView()">✕</button>
+      <button class="quick-close-btn" onclick="closeQuickView()" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
       <div id="quickViewContent" style="display:contents;"></div>
     </div>
   </div>
 
   <!-- Simulated Phone Popup (Live NFC Tap Demo) -->
-  <div class="nfc-tap-animation-overlay" id="nfcTapOverlay" onclick="if(event.target === this) closeNfcDemo();">
+  <div class="nfc-tap-animation-overlay" id="nfcTapOverlay" onclick="if(event.target === this) closeNfcDemo();" role="dialog" aria-modal="true" aria-label="NFC Simulator">
     <div class="phone-mockup">
       <div class="phone-speaker"></div>
       <div class="phone-screen">
-        <div style="font-size:0.75rem; color:var(--emerald); font-weight:800; text-transform:uppercase; margin-bottom:0.5rem;">
-          ⚡ NFC Tag Detected!
+        <div class="phone-nfc-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          NFC Tag Detected!
         </div>
         <div class="google-review-badge">
           <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span>
@@ -758,95 +928,115 @@
         </div>
         <h4 style="font-size: 1.1rem; font-weight:700; margin-bottom: 0.25rem;">Rate Your Experience</h4>
         <p style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1rem;">TapUp PK Flagship Store - Lahore</p>
-        <div class="google-stars">★★★★★</div>
-        <textarea style="width:100%; padding:0.6rem; border:1px solid var(--border-light); border-radius:8px; font-size:0.8rem; margin-bottom:1rem;" rows="3">Outstanding acrylic quality! Highly recommended smart stand for all businesses.</textarea>
-        <button class="btn-primary" style="width:100%; padding:0.7rem; font-size:0.875rem;" onclick="showToast('Review submitted on Google! This is how easy it is for your customers.'); closeNfcDemo();">
+        <div class="google-stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" class="ui-icon ui-icon-star" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" class="ui-icon ui-icon-star" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" class="ui-icon ui-icon-star" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" class="ui-icon ui-icon-star" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" class="ui-icon ui-icon-star" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <textarea style="width:100%; padding:0.6rem; border:1px solid var(--border-light); border-radius:8px; font-size:0.8rem; margin-bottom:1rem;" rows="3" aria-label="Review commentary">Outstanding acrylic quality! Highly recommended smart stand for all businesses.</textarea>
+        <button class="btn-primary" style="width:100%; padding:0.75rem; font-size:0.875rem;" onclick="showToast('Review submitted on Google! This is how easy it is for your customers.'); closeNfcDemo();">
           Post Review
         </button>
-        <button style="margin-top:0.75rem; font-size:0.75rem; color:var(--text-muted);" onclick="closeNfcDemo()">Close Simulator</button>
+        <button style="margin-top:0.75rem; font-size:0.75rem; color:var(--text-muted); padding:0.5rem;" onclick="closeNfcDemo()">Close Simulator</button>
       </div>
     </div>
   </div>
 
   <!-- Floating WhatsApp Widget -->
-  <div class="floating-whatsapp">
-    <div class="wa-chat-popup" id="waChatPopup">
+  <div class="floating-whatsapp" role="complementary" aria-label="WhatsApp Support">
+    <div class="wa-chat-popup" id="waChatPopup" role="dialog" aria-label="WhatsApp Support Chat">
       <div class="wa-popup-header">
         <img src="favicon.png" class="wa-avatar" alt="TapUp Agent" />
         <div class="wa-header-info">
           <h4>TapUp Support (Lahore)</h4>
           <p>Online • Instant reply</p>
         </div>
-        <button onclick="toggleWaPopup()" style="color:#ffffff; margin-left:auto; font-size:1.1rem;">✕</button>
+        <button onclick="toggleWaPopup()" class="wa-close-popup-btn" aria-label="Close chat popup">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
       </div>
       <div class="wa-popup-body">
         <div class="wa-bubble">
-          Assalam o Alaikum! 👋 Welcome to TapUp.pk. How can we assist you with custom NFC and QR stands today?
+          Assalam o Alaikum! Welcome to TapUp.pk. How can we assist you with custom NFC and QR stands today?
         </div>
         <div class="wa-quick-options">
           <button class="wa-quick-btn" onclick="quickWaMessage('Hi! I want to customize a 4-in-1 NFC Stand for my business.')">
-            ✨ Customize 4-in-1 Stand
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            Customize 4-in-1 Stand
           </button>
           <button class="wa-quick-btn" onclick="quickWaMessage('Assalam o Alaikum, what is the delivery time to Karachi/Islamabad?')">
-            🚚 Inquire Delivery Times
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
+            Inquire Delivery Times
           </button>
           <button class="wa-quick-btn" onclick="quickWaMessage('Do you offer bulk discounts for multiple branches?')">
-            🏢 Bulk Franchise Pricing
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+            Bulk Franchise Pricing
           </button>
         </div>
       </div>
     </div>
-    <div class="floating-wa-btn" onclick="toggleWaPopup()" title="Chat on WhatsApp">
-      <div class="wa-pulse"></div>
-      💬
+    <div class="floating-wa-btn" onclick="toggleWaPopup()" title="Chat on WhatsApp (+92 321 3010900)" role="button" tabindex="0" aria-label="Chat on WhatsApp">
+      <div class="wa-pulse" aria-hidden="true"></div>
+      <svg viewBox="0 0 24 24" fill="currentColor" class="ui-icon ui-icon-whatsapp floating-wa-svg" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.177 8.177 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m-3.53 3.47c-.2 0-.42.01-.6.08-.23.08-.6.31-.73.65-.21.53-.78 1.94-.78 3.51 0 1.83 1.34 3.6 1.53 3.86.19.26 2.6 4.14 6.42 5.62 3.2 1.24 3.85.99 4.54.93.69-.06 2.23-.91 2.54-1.79.31-.88.31-1.63.22-1.79-.09-.16-.35-.26-.73-.45-.38-.19-2.23-1.1-2.58-1.23-.34-.12-.6-.19-.85.19-.26.38-.99 1.23-1.21 1.48-.23.26-.45.28-.83.1-.38-.19-1.61-.59-3.07-1.89-1.13-1.01-1.9-2.26-2.12-2.64-.23-.38-.02-.59.17-.78.17-.17.38-.45.57-.67.19-.23.26-.38.38-.64.13-.26.06-.48-.03-.67-.09-.19-.83-2-.1.14-.38-.34-.78-.71-.78z"/></svg>
     </div>
   </div>
 
   <!-- Toast Notification Container -->
-  <div class="toast-container" id="toastContainer"></div>
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
 
   <!-- Mobile Bottom Action Bar (Sticky Thumb Navigation) -->
   <nav class="mobile-bottom-bar" aria-label="Mobile Navigation">
-    <a href="#home" class="bottom-bar-item active" id="bottomNavHome">
-      <span class="bottom-bar-icon">🏠</span>
+    <a href="#home" class="bottom-bar-item active" id="bottomNavHome" aria-label="Home">
+      <span class="bottom-bar-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </span>
       <span class="bottom-bar-label">Home</span>
     </a>
-    <a href="#shop" class="bottom-bar-item" id="bottomNavShop">
-      <span class="bottom-bar-icon">🛍️</span>
+    <a href="#shop" class="bottom-bar-item" id="bottomNavShop" aria-label="Shop">
+      <span class="bottom-bar-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </span>
       <span class="bottom-bar-label">Shop</span>
     </a>
-    <button class="bottom-bar-item" onclick="openSearch()" id="bottomNavSearch">
-      <span class="bottom-bar-icon">🔍</span>
+    <button class="bottom-bar-item" onclick="openSearch()" id="bottomNavSearch" aria-label="Search">
+      <span class="bottom-bar-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </span>
       <span class="bottom-bar-label">Search</span>
     </button>
-    <button class="bottom-bar-item" onclick="openCartDrawer()" id="bottomNavCart">
+    <button class="bottom-bar-item" onclick="openCartDrawer()" id="bottomNavCart" aria-label="Cart">
       <span class="bottom-bar-icon">
-        🛒
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ui-icon" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
         <span class="bottom-badge" id="bottomCartBadge">0</span>
       </span>
       <span class="bottom-bar-label">Cart</span>
     </button>
-    <button class="bottom-bar-item bottom-bar-wa" onclick="orderOnWhatsApp()" id="bottomNavWA">
-      <span class="bottom-bar-icon">💬</span>
+    <button class="bottom-bar-item bottom-bar-wa" onclick="orderOnWhatsApp()" id="bottomNavWA" aria-label="WhatsApp Order">
+      <span class="bottom-bar-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="ui-icon ui-icon-whatsapp" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.177 8.177 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m-3.53 3.47c-.2 0-.42.01-.6.08-.23.08-.6.31-.73.65-.21.53-.78 1.94-.78 3.51 0 1.83 1.34 3.6 1.53 3.86.19.26 2.6 4.14 6.42 5.62 3.2 1.24 3.85.99 4.54.93.69-.06 2.23-.91 2.54-1.79.31-.88.31-1.63.22-1.79-.09-.16-.35-.26-.73-.45-.38-.19-2.23-1.1-2.58-1.23-.34-.12-.6-.19-.85.19-.26.38-.99 1.23-1.21 1.48-.23.26-.45.28-.83.1-.38-.19-1.61-.59-3.07-1.89-1.13-1.01-1.9-2.26-2.12-2.64-.23-.38-.02-.59.17-.78.17-.17.38-.45.57-.67.19-.23.26-.38.38-.64.13-.26.06-.48-.03-.67-.09-.19-.83-2-.1.14-.38-.34-.78-.71-.78z"/></svg>
+      </span>
       <span class="bottom-bar-label">WhatsApp</span>
     </button>
   </nav>
 
   <!-- Site Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-grid">
       <!-- Col 1: About & Address -->
       <div class="footer-col footer-about">
-        <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
-          <img src="logo-white.png" alt="TapUp.pk" style="height:44px; width:auto; object-fit:contain;" />
+        <div class="footer-brand-wrap">
+          <img src="logo-white.png" alt="TapUp.pk" class="footer-logo" />
         </div>
         <p>
           TapUp is Pakistan's leading smart NFC and QR code standee solution provider operating from Lahore. We help restaurants, salons, clinics, retail shops, and corporate enterprises gain instant Google reviews, social media followers, and digital payments in a single touch.
         </p>
-        <p style="font-size:0.8125rem; color:#E2E8F0;">
+        <p class="footer-contact-details">
           <strong>Address:</strong> B3 Second floor, 28 Band Road, Lahore 54000, Pakistan<br>
-          <strong>Phone:</strong> <a href="tel:+923277008585" style="color:var(--brand-mint); font-weight:600;">+92 327 7008585</a><br>
-          <strong>Email:</strong> <a href="mailto:info@tapup.pk" style="color:var(--brand-mint); font-weight:600;">info@tapup.pk</a><br>
+          <strong>Phone:</strong> <a href="tel:+923213010900" class="footer-link-highlight">+92 321 3010900</a><br>
+          <strong>WhatsApp:</strong> <a href="https://wa.me/923213010900" target="_blank" class="footer-link-highlight">+92 321 3010900</a><br>
+          <strong>Email:</strong> <a href="mailto:info@tapup.pk" class="footer-link-highlight">info@tapup.pk</a><br>
           <strong>Business Name:</strong> Tap Up PK
         </p>
       </div>
@@ -882,7 +1072,7 @@
           Sign-up our Newsletter now to be the first one to receive updates about deals, discounts &amp; offers!
         </p>
         <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed to TapUp newsletter!'); this.reset();">
-          <input type="email" class="newsletter-input" required placeholder="Enter your email address..." />
+          <input type="email" class="newsletter-input" required placeholder="Enter your email address..." aria-label="Email for newsletter" />
           <button type="submit" class="btn-primary" style="padding:0.75rem;">Subscribe</button>
         </form>
       </div>
@@ -904,6 +1094,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="icons.js"></script>
   <script src="store-data.js"></script>
   <script src="app.js"></script>
 </body>

@@ -1,6 +1,7 @@
 /**
  * TapScan.pk - Complete Client Application Logic
- * Single-Page Router, Product Filtering, Cart Drawer, COD Checkout, WhatsApp Orders, NFC Simulator
+ * Upgraded Frontend: Mobile-First, Accessible, Professional Icons & WhatsApp Ordering
+ * Server-Safe (Universal Browser + Node.js / SSR compatibility)
  */
 
 (function () {
@@ -12,6 +13,11 @@
   if (typeof window === 'undefined') {
     globalScope.window = globalScope;
   }
+
+  // Safe Icons fallback for Node/SSR environments
+  const Icons = globalScope.Icons || (typeof require !== 'undefined' ? (function () {
+    try { return require('./icons.js'); } catch (e) { return {}; }
+  })() : {});
 
   // Safe localStorage access helpers (client-only lifecycle with try/catch fallback)
   function getSafeStorage(key, defaultValue) {
@@ -47,8 +53,13 @@
     searchQuery: '',
     sortBy: 'featured',
     discountPercent: 0,
-    appliedCoupon: ''
+    appliedCoupon: '',
+    selectedPaymentMethod: 'cod'
   };
+
+  // Dedicated WhatsApp Ordering Destination
+  const WHATSAPP_NUMBER = '923213010900';
+  const WHATSAPP_BASE_URL = 'https://wa.me/' + WHATSAPP_NUMBER;
 
   // Helper functions
   function formatPKR(amount) {
@@ -69,18 +80,21 @@
     }
   }
 
-  function showToast(message, icon = '✓') {
+  function showToast(message, iconSvg = null) {
+    if (typeof document === 'undefined') return;
     const container = document.getElementById('toastContainer');
     if (!container) return;
     const toast = document.createElement('div');
     toast.className = 'toast';
-    toast.innerHTML = `<span>${icon}</span> <span>${message}</span>`;
+    toast.setAttribute('role', 'status');
+    const icon = iconSvg || (Icons.checkCircle ? Icons.checkCircle('toast-icon') : '');
+    toast.innerHTML = `<span class="toast-icon-wrap">${icon}</span> <span class="toast-msg">${message}</span>`;
     container.appendChild(toast);
     setTimeout(() => {
       toast.style.opacity = '0';
-      toast.style.transform = 'translateX(-20px)';
+      toast.style.transform = 'translateY(12px) scale(0.96)';
       setTimeout(() => toast.remove(), 300);
-    }, 3000);
+    }, 3200);
   }
 
   // Cart Operations
@@ -103,14 +117,14 @@
     }
 
     saveCart();
-    showToast(`Added "${product.title.slice(0, 24)}..." to cart`);
+    showToast(`Added "${product.title.slice(0, 24)}..." to cart`, Icons.checkCircle ? Icons.checkCircle() : null);
     openCartDrawer();
   };
 
   window.removeFromCart = function (productId) {
     state.cart = state.cart.filter(item => item.id !== productId);
     saveCart();
-    showToast('Item removed from cart', '✕');
+    showToast('Item removed from cart', Icons.trash ? Icons.trash() : null);
   };
 
   window.updateQty = function (productId, delta) {
@@ -128,10 +142,10 @@
     const idx = state.wishlist.indexOf(productId);
     if (idx === -1) {
       state.wishlist.push(productId);
-      showToast('Added to wishlist', '♥');
+      showToast('Added to wishlist', Icons.heartFilled ? Icons.heartFilled() : null);
     } else {
       state.wishlist.splice(idx, 1);
-      showToast('Removed from wishlist', '♡');
+      showToast('Removed from wishlist', Icons.heart ? Icons.heart() : null);
     }
     saveWishlist();
   };
@@ -170,9 +184,9 @@
     // Free delivery progress
     const threshold = window.TAPSCAN?.store?.freeDeliveryThreshold || 5000;
     if (freeShippingBar && freeShippingMsg) {
-      if (subtotal >= threshold) {
+      if (subtotal >= threshold && subtotal > 0) {
         freeShippingBar.style.width = '100%';
-        freeShippingMsg.innerHTML = '🎉 <strong>Free Delivery Unlocked!</strong> You qualify for free delivery across Pakistan.';
+        freeShippingMsg.innerHTML = `<span class="progress-unlocked-icon">${Icons.sparkles ? Icons.sparkles() : ''}</span> <strong>Free Delivery Unlocked!</strong> You qualify for free nationwide delivery.`;
       } else {
         const remaining = threshold - subtotal;
         const pct = Math.min(100, Math.round((subtotal / threshold) * 100));
@@ -186,26 +200,34 @@
       if (state.cart.length === 0) {
         drawerItemsEl.innerHTML = `
           <div class="cart-empty-state">
-            <div class="cart-empty-icon">🛒</div>
+            <div class="cart-empty-icon">${Icons.shoppingBag ? Icons.shoppingBag('icon-hero-empty') : ''}</div>
             <h4>Your cart is empty</h4>
             <p>Looks like you haven't added any smart NFC stands yet.</p>
-            <button class="btn-primary" style="margin-top: 1rem; width: 100%;" onclick="closeCartDrawer(); window.location.hash='#shop';">Shop All Stands</button>
+            <button class="btn-primary" style="margin-top: 1.25rem; width: 100%;" onclick="closeCartDrawer(); window.location.hash='#shop';">
+              ${Icons.shoppingBag ? Icons.shoppingBag() : ''} Shop All Stands
+            </button>
           </div>
         `;
       } else {
         drawerItemsEl.innerHTML = state.cart.map(item => `
           <div class="cart-item">
-            <img src="${item.image}" alt="${item.title}" class="cart-item-img" />
+            <img src="${item.image}" alt="${item.title}" class="cart-item-img" loading="lazy" />
             <div class="cart-item-info">
-              <h4>${item.title}</h4>
+              <h4 class="cart-item-title">${item.title}</h4>
               <div class="cart-item-price">${formatPKR(item.price)}</div>
-              <div class="qty-control">
-                <button class="qty-btn" onclick="updateQty(${item.id}, -1)">−</button>
+              <div class="qty-control" aria-label="Quantity for ${item.title}">
+                <button class="qty-btn" onclick="updateQty(${item.id}, -1)" aria-label="Decrease quantity">
+                  ${Icons.minus ? Icons.minus() : '−'}
+                </button>
                 <span class="qty-number">${item.qty}</span>
-                <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+                <button class="qty-btn" onclick="updateQty(${item.id}, 1)" aria-label="Increase quantity">
+                  ${Icons.plus ? Icons.plus() : '+'}
+                </button>
               </div>
             </div>
-            <button class="remove-item-btn" onclick="removeFromCart(${item.id})" title="Remove item">✕</button>
+            <button class="remove-item-btn" onclick="removeFromCart(${item.id})" title="Remove item" aria-label="Remove ${item.title}">
+              ${Icons.trash ? Icons.trash() : ''}
+            </button>
           </div>
         `).join('');
       }
@@ -215,12 +237,18 @@
   // Drawer Controls
   window.openCartDrawer = function () {
     const overlay = document.getElementById('cartDrawerOverlay');
-    if (overlay) overlay.classList.add('open');
+    if (overlay) {
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
   };
 
   window.closeCartDrawer = function () {
     const overlay = document.getElementById('cartDrawerOverlay');
-    if (overlay) overlay.classList.remove('open');
+    if (overlay) {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   };
 
   // Coupon
@@ -231,41 +259,79 @@
     if (code === 'TAPUP10' || code === 'TAPSCAN10' || code === 'SAVE10') {
       state.discountPercent = 10;
       state.appliedCoupon = code;
-      showToast('Promo code applied: 10% Discount!');
+      showToast('Promo code applied: 10% Discount!', Icons.tag ? Icons.tag() : null);
       updateCartUI();
     } else if (code === 'FREESHIP') {
-      showToast('Free shipping promo applied!');
+      showToast('Free shipping promo applied!', Icons.truck ? Icons.truck() : null);
     } else {
-      showToast('Invalid promo code. Try "TAPUP10"', '⚠️');
+      showToast('Invalid promo code. Try "TAPUP10"', Icons.alertCircle ? Icons.alertCircle() : null);
     }
   };
 
   // WhatsApp Order Generator
-  window.orderOnWhatsApp = function (productId = null) {
+  // Destination: +92 321 3010900 (URL: https://wa.me/923213010900)
+  window.orderOnWhatsApp = function (productId = null, customQty = 1) {
     let message = '';
-    const phone = window.TAPSCAN?.store?.whatsapp || '923277008585';
 
     if (productId) {
       const p = state.products.find(item => item.id === productId);
       if (p) {
-        message = `Assalam o Alaikum TapUp team! 👋\nI want to order:\n*${p.title}*\nPrice: ${formatPKR(p.price)}\nLink: https://tapup.pk/products/${p.handle}\nPlease send customization details for logo and links.`;
+        const qty = Math.max(1, customQty);
+        message = [
+          `Hello! I would like to order:`,
+          `• *Product:* ${p.title}`,
+          `• *Quantity:* ${qty}`,
+          `• *Unit Price:* ${formatPKR(p.price)}`,
+          `• *Total:* ${formatPKR(p.price * qty)}`,
+          `• *Product Link:* https://tapup.pk/#product/${p.id}`,
+          ``,
+          `Please confirm availability and share customization details for our logo & links.`
+        ].join('\n');
       }
     } else if (state.cart.length > 0) {
-      const itemsList = state.cart.map((i, idx) => `${idx + 1}. ${i.title} (Qty: ${i.qty}) - ${formatPKR(i.price * i.qty)}`).join('\n');
-      const total = state.cart.reduce((s, i) => s + (i.price * i.qty), 0);
-      message = `Assalam o Alaikum TapUp PK! 📦\nI would like to place an order:\n\n${itemsList}\n\n*Total Amount: ${formatPKR(total)}*\nPlease confirm availability and payment details.`;
+      const subtotal = state.cart.reduce((s, i) => s + (i.price * i.qty), 0);
+      const discount = (subtotal * state.discountPercent) / 100;
+      const threshold = window.TAPSCAN?.store?.freeDeliveryThreshold || 5000;
+      const shipping = subtotal >= threshold ? 0 : 250;
+      const grandTotal = Math.max(0, subtotal - discount) + shipping;
+
+      const itemsList = state.cart.map((i, idx) =>
+        `${idx + 1}. *${i.title}*\n   Qty: ${i.qty} | Price: ${formatPKR(i.price)} | Subtotal: ${formatPKR(i.price * i.qty)}`
+      ).join('\n\n');
+
+      message = [
+        `Hello! I would like to place an order from my cart:`,
+        ``,
+        itemsList,
+        ``,
+        `─────────────────────`,
+        `*Items Subtotal:* ${formatPKR(subtotal)}`,
+        state.discountPercent > 0 ? `*Discount (${state.appliedCoupon}):* -${formatPKR(discount)}` : null,
+        `*Delivery Charges:* ${shipping === 0 ? 'FREE (Unlocked)' : formatPKR(shipping)}`,
+        `*Payable Grand Total:* ${formatPKR(grandTotal)}`,
+        `*Payment Method:* Cash on Delivery (COD)`,
+        `─────────────────────`,
+        `Please confirm my order and share customization instructions for our logo & links.`
+      ].filter(Boolean).join('\n');
     } else {
-      message = `Assalam o Alaikum TapUp team! I want to inquire about custom NFC and QR code stands for my business.`;
+      message = `Hello! I would like to place an order. Please share the available products and ordering details.`;
     }
 
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    const url = `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
+
+  // Quick inquiry message trigger for WhatsApp
+  window.quickWaMessage = function (msg) {
+    const text = msg || `Hello! I would like to inquire about TapScan smart NFC & QR stands for my business.`;
+    const url = `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   };
 
   // Checkout Modal
   window.openCheckout = function () {
     if (state.cart.length === 0) {
-      showToast('Your cart is empty!', '⚠');
+      showToast('Your cart is empty! Add products to proceed.', Icons.alertCircle ? Icons.alertCircle() : null);
       return;
     }
     closeCartDrawer();
@@ -302,14 +368,19 @@
     }
 
     overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
   };
 
   window.closeCheckout = function () {
     const overlay = document.getElementById('checkoutModalOverlay');
-    if (overlay) overlay.classList.remove('open');
+    if (overlay) {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   };
 
   window.selectPaymentMethod = function (method) {
+    state.selectedPaymentMethod = method;
     document.querySelectorAll('.payment-opt-card').forEach(c => c.classList.remove('active'));
     const clicked = document.querySelector(`.payment-opt-card[data-method="${method}"]`);
     if (clicked) clicked.classList.add('active');
@@ -318,11 +389,11 @@
     if (!detailBox) return;
 
     if (method === 'cod') {
-      detailBox.innerHTML = `<strong>Cash on Delivery (COD):</strong> Pay in cash to the rider when your custom stand is delivered to your doorstep anywhere in Pakistan.`;
+      detailBox.innerHTML = `<strong>Cash on Delivery (COD):</strong> Pay in cash to the courier rider upon delivery anywhere in Pakistan.`;
     } else if (method === 'jazzcash') {
-      detailBox.innerHTML = `<strong>EasyPaisa / JazzCash:</strong> Send total amount to <strong>0327-7008585</strong> (Title: TapScan PK). Please send transaction screenshot on WhatsApp after placing order.`;
+      detailBox.innerHTML = `<strong>EasyPaisa / JazzCash:</strong> Send total amount to <strong>0321-3010900</strong> (Title: TapScan PK). Please send transaction screenshot on WhatsApp (+92 321 3010900) after placing order.`;
     } else if (method === 'bank') {
-      detailBox.innerHTML = `<strong>Direct Bank Transfer:</strong> Bank: Meezan Bank Ltd. | Account Title: TapScan PK | IBAN: PK45MEZN0002190105829102. Share receipt on WhatsApp.`;
+      detailBox.innerHTML = `<strong>Direct Bank Transfer:</strong> Bank: Meezan Bank Ltd. | Account Title: TapScan PK | IBAN: PK45MEZN0002190105829102. Share deposit receipt on WhatsApp (+92 321 3010900).`;
     }
   };
 
@@ -334,10 +405,10 @@
     const city = document.getElementById('custCity').value;
     const address = document.getElementById('custAddress').value.trim();
     const notes = document.getElementById('custNotes').value.trim();
-    const payment = document.querySelector('.payment-opt-card.active')?.dataset?.method || 'cod';
+    const payment = state.selectedPaymentMethod || 'cod';
 
     if (!name || !phone || !address || !city) {
-      showToast('Please fill all required fields.', '⚠');
+      showToast('Please fill all required fields.', Icons.alertCircle ? Icons.alertCircle() : null);
       return;
     }
 
@@ -351,20 +422,38 @@
     const modalBody = document.querySelector('.checkout-modal-body');
     const itemsText = state.cart.map(i => `• ${i.title} x ${i.qty} (${formatPKR(i.price * i.qty)})`).join('\n');
 
-    const waOrderMsg = `Assalam o Alaikum TapUp PK!\n\nNew Order Confirmed! 🎉\n*Order ID:* #${orderId}\n*Customer:* ${name}\n*Phone:* ${phone}\n*City:* ${city}\n*Address:* ${address}\n*Payment Method:* ${payment.toUpperCase()}\n\n*Ordered Items:*\n${itemsText}\n\n*Grand Total:* ${formatPKR(grandTotal)}\n${notes ? `*Special Notes:* ${notes}\n` : ''}\nPlease start preparing my standee!`;
+    const waOrderMsg = [
+      `Assalam o Alaikum TapUp PK!`,
+      ``,
+      `New Order Confirmed!`,
+      `*Order ID:* #${orderId}`,
+      `*Customer:* ${name}`,
+      `*Phone:* ${phone}`,
+      `*City:* ${city}`,
+      `*Address:* ${address}`,
+      `*Payment Method:* ${payment.toUpperCase()}`,
+      ``,
+      `*Ordered Items:*`,
+      itemsText,
+      ``,
+      `*Grand Total:* ${formatPKR(grandTotal)}`,
+      notes ? `*Special Notes:* ${notes}` : null,
+      ``,
+      `Please confirm my standee fabrication!`
+    ].filter(Boolean).join('\n');
 
     modalBody.innerHTML = `
       <div class="order-success-card">
-        <div class="success-icon">✓</div>
+        <div class="success-icon">${Icons.checkCircle ? Icons.checkCircle('icon-hero-check') : ''}</div>
         <h2>Thank You, ${name}!</h2>
-        <p>Your order has been recorded successfully. Our team will verify your customization details shortly.</p>
+        <p>Your order has been recorded successfully. Our Lahore production team will verify your customization details shortly.</p>
         <div class="order-id-badge">Order ID: #${orderId}</div>
         <p style="font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-          We will contact you on <strong>${phone}</strong> for your logo file and link configurations.
+          We will contact you on <strong>${phone}</strong> for your business logo and destination link configurations.
         </p>
         <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-          <a href="https://wa.me/923277008585?text=${encodeURIComponent(waOrderMsg)}" target="_blank" class="btn-whatsapp" style="width: 100%;">
-            💬 Send Order Details to WhatsApp
+          <a href="${WHATSAPP_BASE_URL}?text=${encodeURIComponent(waOrderMsg)}" target="_blank" class="btn-whatsapp" style="width: 100%;">
+            ${Icons.whatsapp ? Icons.whatsapp() : ''} Send Order Details to WhatsApp
           </a>
           <button class="btn-secondary" onclick="closeCheckout(); window.location.hash='#home';">
             Continue Shopping
@@ -394,7 +483,7 @@
         ${p.images.length > 1 ? `
           <div class="qv-thumbs-row">
             ${p.images.map((img, idx) => `
-              <img src="${img}" class="qv-thumb ${idx === 0 ? 'active' : ''}" onclick="document.getElementById('qvMainImage').src='${img}'; document.querySelectorAll('.qv-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');" />
+              <img src="${img}" alt="${p.title} view ${idx + 1}" class="qv-thumb ${idx === 0 ? 'active' : ''}" onclick="document.getElementById('qvMainImage').src='${img}'; document.querySelectorAll('.qv-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');" />
             `).join('')}
           </div>
         ` : ''}
@@ -403,7 +492,8 @@
         <div class="qv-tag">${p.product_type || 'Smart QR Standee'}</div>
         <h2 class="qv-title">${p.title}</h2>
         <div class="product-rating" style="margin-bottom: 0.75rem;">
-          ★★★★★ <span class="count">(${p.rating} / 5 · ${p.reviewCount} Reviews)</span>
+          ${Icons.stars ? Icons.stars(p.rating || 5) : ''}
+          <span class="count">(${p.rating} / 5 · ${p.reviewCount} Reviews)</span>
         </div>
         <div class="qv-price-row">
           <div class="qv-price">${formatPKR(p.price)}</div>
@@ -413,29 +503,33 @@
         <div class="qv-desc">
           ${p.description || 'Custom laser-cut acrylic standee equipped with high-frequency NFC chip and dynamic QR codes. Built for cafés, restaurants, salons, clinics, and modern businesses.'}
         </div>
-        <ul style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 1.5rem; padding-left: 1.25rem;">
-          <li>✓ 100% Plug & Play — Ready out of the box</li>
-          <li>✓ Lifetime access — Zero monthly fees</li>
-          <li>✓ Android & iPhone universal compatibility</li>
-          <li>✓ Personalized with your brand logo & colors</li>
+        <ul class="qv-features-list">
+          <li><span class="check-icon">${Icons.check ? Icons.check() : ''}</span> 100% Plug &amp; Play — Ready out of the box</li>
+          <li><span class="check-icon">${Icons.check ? Icons.check() : ''}</span> Lifetime access — Zero monthly fees</li>
+          <li><span class="check-icon">${Icons.check ? Icons.check() : ''}</span> Android &amp; iPhone universal compatibility</li>
+          <li><span class="check-icon">${Icons.check ? Icons.check() : ''}</span> Personalized with your brand logo &amp; colors</li>
         </ul>
         <div class="qv-actions">
           <button class="btn-primary" style="flex:1;" onclick="addToCart(${p.id}); closeQuickView();">
-            🛒 Add to Cart
+            ${Icons.shoppingBag ? Icons.shoppingBag() : ''} Add to Cart
           </button>
           <button class="btn-whatsapp" onclick="orderOnWhatsApp(${p.id})">
-            💬 WhatsApp Order
+            ${Icons.whatsapp ? Icons.whatsapp() : ''} Order on WhatsApp
           </button>
         </div>
       </div>
     `;
 
     overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
   };
 
   window.closeQuickView = function () {
     const overlay = document.getElementById('quickViewOverlay');
-    if (overlay) overlay.classList.remove('open');
+    if (overlay) {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   };
 
   // Interactive Live NFC Simulator
@@ -444,12 +538,18 @@
       try { navigator.vibrate([100, 50, 100]); } catch (e) {}
     }
     const overlay = document.getElementById('nfcTapOverlay');
-    if (overlay) overlay.classList.add('show');
+    if (overlay) {
+      overlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
   };
 
   window.closeNfcDemo = function () {
     const overlay = document.getElementById('nfcTapOverlay');
-    if (overlay) overlay.classList.remove('show');
+    if (overlay) {
+      overlay.classList.remove('show');
+      document.body.style.overflow = '';
+    }
   };
 
   // Live Search Controls
@@ -457,13 +557,19 @@
     const modal = document.getElementById('searchModal');
     if (modal) {
       modal.classList.add('active');
-      document.getElementById('searchInput')?.focus();
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        document.getElementById('searchInput')?.focus();
+      }, 100);
     }
   };
 
   window.closeSearch = function () {
     const modal = document.getElementById('searchModal');
-    if (modal) modal.classList.remove('active');
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   };
 
   window.handleSearchInput = function (val) {
@@ -485,7 +591,7 @@
       resultsContainer.innerHTML = `<p style="color:var(--text-muted); text-align:center; padding:1.5rem;">No products found for "${val}".</p>`;
     } else {
       resultsContainer.innerHTML = matched.slice(0, 8).map(p => `
-        <div class="search-item" onclick="closeSearch(); window.location.hash='#product/' + ${p.id};">
+        <div class="search-item" onclick="closeSearch(); window.location.hash='#product/' + ${p.id};" role="button" tabindex="0">
           <img src="${p.images[0]}" alt="${p.title}" />
           <div class="search-item-info">
             <h4>${p.title}</h4>
@@ -502,12 +608,6 @@
     if (popup) popup.classList.toggle('active');
   };
 
-  window.quickWaMessage = function (msg) {
-    const phone = window.TAPSCAN?.store?.whatsapp || '923277008585';
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
-  };
-
   // Rendering Product Card HTML
   function renderProductCard(p) {
     return `
@@ -516,27 +616,32 @@
           <img src="${p.images[0]}" alt="${p.title}" class="product-thumb" loading="lazy" />
           ${p.badge ? `<span class="product-tag-badge">${p.badge}</span>` : ''}
           <div class="quick-action-overlay">
-            <button class="quick-btn" onclick="event.stopPropagation(); openQuickView(${p.id});">Quick View</button>
-            <button class="quick-btn" onclick="event.stopPropagation(); addToCart(${p.id});">Add to Cart</button>
+            <button class="quick-btn" onclick="event.stopPropagation(); openQuickView(${p.id});" aria-label="Quick view ${p.title}">
+              ${Icons.eye ? Icons.eye() : ''} Quick View
+            </button>
+            <button class="quick-btn" onclick="event.stopPropagation(); addToCart(${p.id});" aria-label="Add ${p.title} to cart">
+              ${Icons.shoppingBag ? Icons.shoppingBag() : ''} Add to Cart
+            </button>
           </div>
         </div>
         <div class="product-details">
-          <div class="product-rating">
-            ★★★★★ <span class="count">(${p.rating} · ${p.reviewCount})</span>
+          <div class="product-rating" aria-label="Rated ${p.rating} out of 5 stars">
+            ${Icons.stars ? Icons.stars(p.rating || 5) : ''}
+            <span class="count">(${p.rating} · ${p.reviewCount})</span>
           </div>
           <h3 class="product-title">
-            <a href="#product/${p.id}">${p.title}</a>
+            <a href="#product/${p.id}" title="${p.title}">${p.title}</a>
           </h3>
           <div class="product-price-row">
             <span class="current-price">${formatPKR(p.price)}</span>
             ${p.compare_at_price ? `<span class="compare-price">${formatPKR(p.compare_at_price)}</span>` : ''}
           </div>
           <div class="product-card-actions">
-            <button class="btn-add-cart" onclick="addToCart(${p.id})">
-              🛒 Add to Cart
+            <button class="btn-add-cart" onclick="addToCart(${p.id})" aria-label="Add ${p.title} to Cart">
+              ${Icons.shoppingBag ? Icons.shoppingBag() : ''} Add to Cart
             </button>
-            <button class="btn-wa-order" title="Order on WhatsApp" onclick="orderOnWhatsApp(${p.id})">
-              💬
+            <button class="btn-wa-order" title="Order on WhatsApp" aria-label="Order ${p.title} on WhatsApp" onclick="orderOnWhatsApp(${p.id})">
+              ${Icons.whatsapp ? Icons.whatsapp() : 'WhatsApp'}
             </button>
           </div>
         </div>
@@ -602,7 +707,7 @@
     // Update active nav links
     document.querySelectorAll('.nav-link').forEach(link => {
       const href = link.getAttribute('href');
-      link.classList.toggle('active', href === hash || (href === '#home' && hash === ''));
+      link.classList.toggle('active', href === hash || (href === '#home' && (hash === '' || hash === '#home')));
     });
 
     // Update Mobile Bottom Bar active states
@@ -653,48 +758,49 @@
 
     container.innerHTML = `
       <div class="container">
-        <div style="margin-bottom: 1.5rem; font-size: 0.875rem; color: var(--text-muted);">
-          <a href="#home">Home</a> / <a href="#shop">Shop</a> / <span style="color:var(--text-primary); font-weight:600;">${p.title}</span>
-        </div>
-        <div class="quick-view-modal" style="display:grid; position:static; box-shadow:var(--shadow-lg); max-height:none; margin-bottom: 3rem;">
-          <div class="qv-media-col" style="padding: 2.5rem;">
-            <img src="${p.images[0]}" alt="${p.title}" class="qv-main-img" id="detailMainImg" style="height: 420px;" />
-            <div class="qv-thumbs-row" style="margin-top: 1rem;">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumbs">
+          <a href="#home">Home</a> / <a href="#shop">Shop</a> / <span class="current">${p.title}</span>
+        </nav>
+        <div class="quick-view-modal product-detail-card">
+          <div class="qv-media-col">
+            <img src="${p.images[0]}" alt="${p.title}" class="qv-main-img detail-main-photo" id="detailMainImg" />
+            <div class="qv-thumbs-row">
               ${p.images.map((img, i) => `
-                <img src="${img}" class="qv-thumb ${i === 0 ? 'active' : ''}" onclick="document.getElementById('detailMainImg').src='${img}'; document.querySelectorAll('.qv-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');" />
+                <img src="${img}" alt="${p.title} photo ${i + 1}" class="qv-thumb ${i === 0 ? 'active' : ''}" onclick="document.getElementById('detailMainImg').src='${img}'; document.querySelectorAll('.qv-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');" />
               `).join('')}
             </div>
           </div>
-          <div class="qv-details-col" style="padding: 3rem 2.5rem;">
+          <div class="qv-details-col">
             <div class="qv-tag">${p.product_type}</div>
-            <h1 style="font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; color: var(--primary); margin-bottom: 0.85rem; line-height: 1.2;">${p.title}</h1>
+            <h1 class="detail-title">${p.title}</h1>
             <div class="product-rating" style="font-size: 1rem; margin-bottom: 1.25rem;">
-              ★★★★★ <span class="count" style="font-size: 0.875rem;">(${p.rating} / 5 based on ${p.reviewCount} customer reviews)</span>
+              ${Icons.stars ? Icons.stars(p.rating || 5) : ''}
+              <span class="count">(${p.rating} / 5 based on ${p.reviewCount} customer reviews)</span>
             </div>
             <div class="qv-price-row" style="margin-bottom: 1.5rem;">
               <div class="qv-price" style="font-size: 2rem;">${formatPKR(p.price)}</div>
               ${p.compare_at_price ? `<div class="qv-compare" style="font-size: 1.25rem;">${formatPKR(p.compare_at_price)}</div>` : ''}
               ${p.badge ? `<span class="product-tag-badge" style="position:static;">${p.badge}</span>` : ''}
             </div>
-            <div style="background: var(--bg-subtle); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem; font-size: 0.875rem;">
-              🚚 <strong>Cash on Delivery (COD) Available</strong> across Pakistan.<br>
-              ⚡ <strong>Delivery:</strong> 2–4 Business Days via Express Courier.<br>
-              ⭐ <strong>Customization:</strong> We reach out on WhatsApp to collect your logo & links.
+            <div class="detail-trust-box">
+              <div class="trust-line">${Icons.truck ? Icons.truck() : ''} <strong>Cash on Delivery (COD) Available</strong> across Pakistan.</div>
+              <div class="trust-line">${Icons.zap ? Icons.zap() : ''} <strong>Delivery:</strong> 2–4 Business Days via Express Courier.</div>
+              <div class="trust-line">${Icons.sparkles ? Icons.sparkles() : ''} <strong>Customization:</strong> We reach out on WhatsApp to collect your logo &amp; links.</div>
             </div>
-            <div class="qv-desc" style="font-size: 0.9375rem; margin-bottom: 2rem;">
+            <div class="qv-desc" style="font-size: 0.95rem; margin-bottom: 2rem;">
               ${p.description || 'Elevate your customer engagement with TapScan custom NFC stands. Precision-crafted in Lahore, Pakistan with laser-cut acrylic and UV-resistant printing.'}
             </div>
-            <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
-              <div class="qty-control" style="height: 48px;">
-                <button class="qty-btn" style="width: 36px; font-size: 1.2rem;" onclick="let el=document.getElementById('detailQty'); el.innerText=Math.max(1, parseInt(el.innerText)-1);">−</button>
-                <span id="detailQty" class="qty-number" style="font-size: 1rem; padding: 0 1rem;">1</span>
-                <button class="qty-btn" style="width: 36px; font-size: 1.2rem;" onclick="let el=document.getElementById('detailQty'); el.innerText=parseInt(el.innerText)+1;">+</button>
+            <div class="detail-action-row">
+              <div class="qty-control detail-qty-stepper">
+                <button class="qty-btn" aria-label="Decrease quantity" onclick="let el=document.getElementById('detailQty'); el.innerText=Math.max(1, parseInt(el.innerText)-1);">${Icons.minus ? Icons.minus() : '−'}</button>
+                <span id="detailQty" class="qty-number">1</span>
+                <button class="qty-btn" aria-label="Increase quantity" onclick="let el=document.getElementById('detailQty'); el.innerText=parseInt(el.innerText)+1;">${Icons.plus ? Icons.plus() : '+'}</button>
               </div>
-              <button class="btn-primary" style="flex:1; height: 48px;" onclick="addToCart(${p.id}, parseInt(document.getElementById('detailQty').innerText));">
-                🛒 Add to Cart
+              <button class="btn-primary detail-add-btn" onclick="addToCart(${p.id}, parseInt(document.getElementById('detailQty').innerText));">
+                ${Icons.shoppingBag ? Icons.shoppingBag() : ''} Add to Cart
               </button>
-              <button class="btn-whatsapp" style="height: 48px;" onclick="orderOnWhatsApp(${p.id});">
-                💬 WhatsApp Order
+              <button class="btn-whatsapp detail-wa-btn" onclick="orderOnWhatsApp(${p.id}, parseInt(document.getElementById('detailQty').innerText));">
+                ${Icons.whatsapp ? Icons.whatsapp() : ''} Order on WhatsApp
               </button>
             </div>
           </div>
@@ -745,8 +851,30 @@
   // Mobile Menu Drawer
   window.toggleMobileNav = function () {
     const nav = document.getElementById('mobileNavDrawer');
-    if (nav) nav.classList.toggle('open');
+    if (nav) {
+      const isOpen = nav.classList.toggle('open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
   };
+
+  // Keyboard accessibility: ESC key closes modals
+  function handleGlobalKeyDown(e) {
+    if (e.key === 'Escape') {
+      closeCartDrawer();
+      closeCheckout();
+      closeQuickView();
+      closeNfcDemo();
+      closeSearch();
+      const mobileNav = document.getElementById('mobileNavDrawer');
+      if (mobileNav && mobileNav.classList.contains('open')) {
+        toggleMobileNav();
+      }
+      const waPopup = document.getElementById('waChatPopup');
+      if (waPopup && waPopup.classList.contains('active')) {
+        toggleWaPopup();
+      }
+    }
+  }
 
   // Initialize
   function init() {
@@ -771,9 +899,9 @@
     if (homeFaqList && window.TAPSCAN?.faqs) {
       homeFaqList.innerHTML = window.TAPSCAN.faqs.slice(0, 8).map((faq, i) => `
         <div class="faq-item ${i === 0 ? 'active' : ''}">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="${i === 0}">
             <span>${faq.question}</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon">${Icons.chevronDown ? Icons.chevronDown() : '+'}</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">${faq.answer}</div>
@@ -786,9 +914,9 @@
     if (fullFaqList && window.TAPSCAN?.faqs) {
       fullFaqList.innerHTML = window.TAPSCAN.faqs.map((faq, i) => `
         <div class="faq-item ${i === 0 ? 'active' : ''}">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="${i === 0}">
             <span>${faq.question}</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon">${Icons.chevronDown ? Icons.chevronDown() : '+'}</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">${faq.answer}</div>
@@ -803,18 +931,18 @@
       testList.innerHTML = window.TAPSCAN.testimonials.map(t => `
         <div class="testimonial-card">
           <div class="testimonial-screenshot-wrap" onclick="window.open('${t.image}', '_blank')">
-            <img src="${t.image}" alt="Customer feedback" loading="lazy" />
-            <span class="wa-proof-badge">💬 WhatsApp Verified</span>
+            <img src="${t.image}" alt="Customer feedback from ${t.clientName}" loading="lazy" />
+            <span class="wa-proof-badge">${Icons.whatsapp ? Icons.whatsapp() : ''} WhatsApp Verified</span>
           </div>
           <div class="testimonial-body">
-            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-stars">${Icons.stars ? Icons.stars(5) : ''}</div>
             <p class="testimonial-text">"${t.text}"</p>
             <div class="testimonial-author">
               <div class="author-info">
                 <h5>${t.clientName}</h5>
                 <span>${t.business}</span>
               </div>
-              <div class="author-verified">✓ ${t.phone}</div>
+              <div class="author-verified">${Icons.checkCircle ? Icons.checkCircle() : ''} ${t.phone}</div>
             </div>
           </div>
         </div>
@@ -826,22 +954,25 @@
     if (brandsList && window.TAPSCAN?.brands) {
       brandsList.innerHTML = window.TAPSCAN.brands.map(b => `
         <div class="brand-item" title="${b.name}">
-          <img src="${b.logo}" alt="${b.name}" loading="lazy" />
+          <img src="${b.logo}" alt="${b.name} logo" loading="lazy" />
         </div>
       `).join('');
     }
 
     // Setup router
-    window.addEventListener('hashchange', handleRoute);
-    handleRoute();
-
-    // Setup scroll shadow on header
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('.site-header');
-      if (header) {
-        header.classList.toggle('scrolled', window.scrollY > 20);
-      }
-    });
+    if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
+      window.addEventListener('hashchange', handleRoute);
+      window.addEventListener('keydown', handleGlobalKeyDown);
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('.site-header');
+        if (header) {
+          header.classList.toggle('scrolled', window.scrollY > 20);
+        }
+      });
+    }
+    if (typeof window !== 'undefined' && window.location) {
+      handleRoute();
+    }
 
     updateCartUI();
     updateWishlistUI();
@@ -863,7 +994,8 @@
       init,
       getSafeStorage,
       setSafeStorage,
-      formatPKR
+      formatPKR,
+      orderOnWhatsApp: window.orderOnWhatsApp
     };
   }
 })();
