@@ -4,7 +4,7 @@ const html = fs.readFileSync('index.html', 'utf8');
 
 const requiredIds = [
   'homeProductsGrid', 'catalogProductsGrid', 'productDetailContainer',
-  'testimonialsGrid', 'brandsGrid', 'homeFaqList', 'fullFaqList',
+  'brandsGrid', 'homeFaqList', 'fullFaqList',
   'headerCartCount', 'headerCartPrice', 'drawerCartCount', 'drawerCartItems',
   'drawerSubtotal', 'freeShippingBar', 'freeShippingMsg', 'checkoutSummaryContent',
   'bottomCartBadge', 'toastContainer', 'mobileNavDrawer', 'searchModal',
@@ -25,6 +25,19 @@ requiredIds.forEach(id => {
 });
 if (missingIds === 0) {
   console.log(`✓ All ${requiredIds.length} required DOM IDs are present and intact!`);
+}
+
+// Verification that customer review components are cleanly removed
+const removedIds = ['testimonialsGrid', 'viewReviews'];
+let improperlyPresent = 0;
+removedIds.forEach(id => {
+  if (html.includes(`id="${id}"`)) {
+    console.error('Found removed ID still present: ' + id);
+    improperlyPresent++;
+  }
+});
+if (improperlyPresent === 0) {
+  console.log('✓ Verified: Customer review and testimonial containers cleanly removed from DOM!');
 }
 
 console.log('\n--- Checking WhatsApp Links & Numbers ---');

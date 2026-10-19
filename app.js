@@ -491,10 +491,6 @@
       <div class="qv-details-col">
         <div class="qv-tag">${p.product_type || 'Smart QR Standee'}</div>
         <h2 class="qv-title">${p.title}</h2>
-        <div class="product-rating" style="margin-bottom: 0.75rem;">
-          ${Icons.stars ? Icons.stars(p.rating || 5) : ''}
-          <span class="count">(${p.rating} / 5 · ${p.reviewCount} Reviews)</span>
-        </div>
         <div class="qv-price-row">
           <div class="qv-price">${formatPKR(p.price)}</div>
           ${p.compare_at_price ? `<div class="qv-compare">${formatPKR(p.compare_at_price)}</div>` : ''}
@@ -625,10 +621,6 @@
           </div>
         </div>
         <div class="product-details">
-          <div class="product-rating" aria-label="Rated ${p.rating} out of 5 stars">
-            ${Icons.stars ? Icons.stars(p.rating || 5) : ''}
-            <span class="count">(${p.rating} · ${p.reviewCount})</span>
-          </div>
           <h3 class="product-title">
             <a href="#product/${p.id}" title="${p.title}">${p.title}</a>
           </h3>
@@ -659,8 +651,6 @@
       list.sort((a, b) => a.price - b.price);
     } else if (state.sortBy === 'price-high') {
       list.sort((a, b) => b.price - a.price);
-    } else if (state.sortBy === 'rating') {
-      list.sort((a, b) => b.rating - a.rating);
     }
     return list;
   }
@@ -726,7 +716,8 @@
     } else if (route === '#product') {
       renderProductDetailPage(parseInt(param, 10));
     } else if (route === '#reviews') {
-      document.getElementById('viewReviews')?.classList.add('active');
+      window.location.hash = '#shop';
+      return;
     } else if (route === '#how-it-works') {
       document.getElementById('viewHowItWorks')?.classList.add('active');
     } else if (route === '#about') {
@@ -773,10 +764,6 @@
           <div class="qv-details-col">
             <div class="qv-tag">${p.product_type}</div>
             <h1 class="detail-title">${p.title}</h1>
-            <div class="product-rating" style="font-size: 1rem; margin-bottom: 1.25rem;">
-              ${Icons.stars ? Icons.stars(p.rating || 5) : ''}
-              <span class="count">(${p.rating} / 5 based on ${p.reviewCount} customer reviews)</span>
-            </div>
             <div class="qv-price-row" style="margin-bottom: 1.5rem;">
               <div class="qv-price" style="font-size: 2rem;">${formatPKR(p.price)}</div>
               ${p.compare_at_price ? `<div class="qv-compare" style="font-size: 1.25rem;">${formatPKR(p.compare_at_price)}</div>` : ''}
@@ -925,29 +912,6 @@
       `).join('');
     }
 
-    // Populate Testimonials
-    const testList = document.getElementById('testimonialsGrid');
-    if (testList && window.TAPSCAN?.testimonials) {
-      testList.innerHTML = window.TAPSCAN.testimonials.map(t => `
-        <div class="testimonial-card">
-          <div class="testimonial-screenshot-wrap" onclick="window.open('${t.image}', '_blank')">
-            <img src="${t.image}" alt="Customer feedback from ${t.clientName}" loading="lazy" />
-            <span class="wa-proof-badge">${Icons.whatsapp ? Icons.whatsapp() : ''} WhatsApp Verified</span>
-          </div>
-          <div class="testimonial-body">
-            <div class="testimonial-stars">${Icons.stars ? Icons.stars(5) : ''}</div>
-            <p class="testimonial-text">"${t.text}"</p>
-            <div class="testimonial-author">
-              <div class="author-info">
-                <h5>${t.clientName}</h5>
-                <span>${t.business}</span>
-              </div>
-              <div class="author-verified">${Icons.checkCircle ? Icons.checkCircle() : ''} ${t.phone}</div>
-            </div>
-          </div>
-        </div>
-      `).join('');
-    }
 
     // Populate Brands Marquee
     const brandsList = document.getElementById('brandsGrid');
